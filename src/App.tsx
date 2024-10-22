@@ -7,7 +7,7 @@ import Section from "./components/Section";
 
 function App() {
   return (
-    <main className="flex flex-col justify-between items-center overflow-y-auto bg-gray-800">
+    <main className="bg-right-top bg-gradient-to-tr from-gray-900 via-gray-800/90 via-[65%] to-gray-950 to-[90%] flex flex-col justify-between items-center w-screen overflow-y-auto">
       <Background />
       <Header />
       <Section id="about">
