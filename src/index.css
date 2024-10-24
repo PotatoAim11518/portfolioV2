@@ -6,8 +6,16 @@
 .sheen {
   @apply bg-gradient-to-tl from-indigo-500 via-cyan-400 to-indigo-500;
 }
+
 .tooltip {
-  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-sm font-semibold tracking-wider rounded-full pointer-events-none px-4 py-1;
+  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-sm font-semibold tracking-wider rounded-full;
+}
+
+h1 {
+  @apply text-6xl text-white mb-8;
+}
+h2 {
+  @apply text-4xl text-sky-500 mb-4 mt-10;
 }
 
 /* SCROLLBAR STYLING */

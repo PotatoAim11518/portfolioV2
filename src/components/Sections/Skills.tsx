@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import clsx from "clsx";
 
 const skillIcons = [
   { name: "Javascript", icon: "skill-icons:javascript" },
@@ -20,9 +21,31 @@ const skillIcons = [
 
 const otherSkills = [
   { name: "Socket.io", icon: "devicon:socketio" },
-  { name: "Framer Motion", icon: "devicon:framermotion" },
-  { name: "Styled Components", icon: "skill-icons:styledcomponents" },
+  {
+    name: "Framer Motion",
+    icon: "devicon:framermotion",
+    link: "https://www.framer.com/motion/",
+  },
+  {
+    name: "Styled Components",
+    icon: "skill-icons:styledcomponents",
+    link: "https://styled-components.com/",
+  },
   { name: "Storybook", icon: "logos:storybook-icon" },
+  {
+    name: "Zustand",
+    icon: "",
+    link: "https://zustand.docs.pmnd.rs/getting-started/introduction",
+  },
+];
+const nonTechnicalSkills = ["Direct Sales", "Community Management", "Live2D"];
+
+const questionableSkills = [
+  "Decimating the local crab population",
+  "Cooking",
+  "Crocheting",
+  "1.6 KD/A",
+  "Building PCs",
 ];
 
 export default function Skills() {
@@ -40,12 +63,11 @@ export default function Skills() {
             <div className="relative flex justify-center">
               <Icon
                 key={icon.name}
-                aria-label={icon.name} // fix this
+                aria-label={icon.name}
                 icon={icon.icon}
                 height="6rem"
                 width="6rem"
                 className="peer drop-shadow-md"
-                // implement tooltip
               />
               <div className="absolute hidden peer-hover:inline-block pointer-events-none px-4 py-1 -bottom-4 tooltip animate-tooltip">
                 {icon.name}
@@ -55,17 +77,47 @@ export default function Skills() {
         </section>
       </div>
       <section>
-        <h2>Honorable Mentions</h2>
+        <h2>Other Technical Skills</h2>
         <section className="flex gap-2">
           {otherSkills.map((skill) => (
-            <div className="flex justify-center items-center gap-2 tooltip">
+            <a
+              href={skill.link}
+              className={clsx(
+                "flex justify-center items-center px-5 py-2 gap-x-2 tooltip",
+                {
+                  "pointer-events-none": !skill.link,
+                }
+              )}
+            >
               {skill.name}
-              <span>
-                <Icon aria-label={skill.name} icon={skill.icon} />
-              </span>
-            </div>
+              {skill.icon && (
+                <span>
+                  <Icon aria-label={skill.name} icon={skill.icon} />
+                </span>
+              )}
+            </a>
           ))}
         </section>
+      </section>
+      <section>
+        <h2>Non-Technical Skills</h2>
+        <ul className="flex gap-2">
+          {nonTechnicalSkills.map((skill) => (
+            <li className="flex justify-center items-center text-center px-5 py-2 gap-x-2 tooltip">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2>Skills?</h2>
+        <ul className="flex gap-2">
+          {questionableSkills.map((skill) => (
+            <li className="flex justify-center items-center text-center px-5 py-2 gap-x-2 tooltip">
+              {skill}
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
