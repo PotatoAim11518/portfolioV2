@@ -5,7 +5,8 @@ export default {
     extend: {
       animation: {
         city: "city 2s forwards",
-        myName: "myName 4s ease infinite",
+        sheen: "sheen 4s ease infinite",
+        tooltip: "tooltip 0.3s ",
       },
       keyframes: {
         city: {
@@ -16,7 +17,7 @@ export default {
             color: "#c0362c",
           },
         },
-        myName: {
+        sheen: {
           "0%, 100%": {
             "background-size": "200% 200%",
             "background-position": "top left",
@@ -24,6 +25,16 @@ export default {
           "50%": {
             "background-size": "200% 200%",
             "background-position": "bottom right",
+          },
+        },
+        tooltip: {
+          "0%": {
+            transform: "translateY(20%)",
+            opacity: 0.2,
+          },
+          "100%": {
+            transform: "translateY(0%)",
+            opacity: 1,
           },
         },
       },

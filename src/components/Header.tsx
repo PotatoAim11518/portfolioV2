@@ -1,5 +1,3 @@
-// import Logo from "./Logo";
-
 import { HomeIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
@@ -12,19 +10,19 @@ const navLinks = [
         <HomeIcon /> About
       </span>
     ),
-    href: "#about",
+    id: "#about",
   },
   {
     name: "Skills",
-    href: "#skills",
+    id: "#skills",
   },
   {
     name: "Projects",
-    href: "#projects",
+    id: "#projects",
   },
   {
     name: "Contact",
-    href: "#contact",
+    id: "#contact",
   },
 ];
 
@@ -34,6 +32,10 @@ export default function Header() {
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
 
+  const handleNav = async (id: string) => {
+    window.location.hash = id;
+  };
+
   useEffect(() => {
     const handlePathChange = () => {
       const path = window.location.hash;
@@ -42,33 +44,42 @@ export default function Header() {
     window.addEventListener("hashchange", handlePathChange);
     handlePathChange();
     return () => window.removeEventListener("hashchange", handlePathChange);
-  }, []);
+  }, [path]);
 
   return (
-    <header className="fixed top-6">
+    <header className="fixed top-6 z-10">
       <nav
-        className={clsx("px-4 py-2 rounded-full transition duration-500", {
-          "bg-white/5 shadow-md": scrollPos > 200,
-        })}
+        className={clsx(
+          "px-4 py-2 rounded-full transition duration-500 backdrop-blur-sm",
+          {
+            "bg-indigo-300/10 shadow-md": scrollPos > 200,
+          }
+        )}
       >
         <ul className="flex flex-row items-center gap-x-4 ">
           {navLinks.map((link) => (
             <li
-              key={link.href}
+              key={link.id}
               className={clsx(
                 "relative text-white hover:text-white px-6 py-2 transition mix-blend-overlay",
                 {
-                  "text-white/50": path !== link.href,
+                  "text-white/50": path !== link.id,
                 }
               )}
             >
-              <a href={link.href} className="flex text-xl ">
+              <button
+                onClick={() => handleNav(link.id)}
+                className="flex text-xl "
+              >
                 {link.name}
-              </a>
-              {path === link.href && (
+              </button>
+              {/* <a id={link.id} className="flex text-xl ">
+                {link.name}
+              </a> */}
+              {path === link.id && (
                 <motion.div
                   layoutId="active-pill"
-                  className="absolute inset-0 h-auto w-full bg-gradient-to-tl from-indigo-500 via-cyan-400 to-indigo-500 shadow-md mix-blend-color-dodge animate-myName"
+                  className="absolute inset-0 h-auto w-full shadow-md mix-blend-color-dodge sheen animate-sheen"
                   style={{ borderRadius: 9999 }}
                   transition={{ type: "spring", duration: 0.6 }}
                 ></motion.div>

@@ -5,7 +5,7 @@ type SectionProps = {
 
 export default function Section({ children, id }: SectionProps) {
   return (
-    <section id={id} className="h-[400px] pt-36">
+    <section id={id} className="h-[1000px] max-w-[900px] pt-36">
       {children}
     </section>
   );
