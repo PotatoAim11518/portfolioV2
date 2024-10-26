@@ -10,8 +10,9 @@ export default function Project({ name, tags }: ProjectProps) {
   return (
     <section className="grid grid-cols-8 grid-rows-2 pb-6">
       <a
+        target="blank"
         href="/"
-        className="peer col-start-1 row-span-3 h-[320px] w-[500px] rounded-3xl opacity-40 hover:opacity-100 border-transparent hover:border-2 bg-clip-border overflow-hidden hover:scale-[1.05] sheen transition delay-100 duration-300 shadow-lg hover:shadow-xl"
+        className="peer col-start-1 row-span-3 h-[320px] w-[500px] rounded-3xl opacity-40 hover:opacity-100 border-transparent hover:border-2 bg-clip-border overflow-hidden hover:scale-[1.05] active:scale-[1.03] animate-sheen sheen transition delay-100 duration-300 shadow-lg hover:shadow-xl"
       >
         <img
           src="src/assets/marco-murakami-Ap4wkcAr4Wk-unsplash.jpg"

@@ -15,6 +15,7 @@ export default function Projects() {
         <Project name={projectA.name} tags={projectA.tags} />
         <Project name={projectA.name} tags={projectA.tags} />
       </section>
+      <div className="px-2 py-1 tooltip">More to come...</div>
     </div>
   );
 }
