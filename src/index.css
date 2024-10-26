@@ -3,19 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-6xl text-white;
+  }
+  h2 {
+    @apply text-4xl text-white/80 mb-4 mt-10;
+  }
+}
+
 .sheen {
   @apply bg-gradient-to-tl from-indigo-500 via-cyan-400 to-indigo-500;
 }
 
 .tooltip {
-  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-sm font-semibold tracking-wider rounded-full;
+  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-sm font-semibold tracking-wider rounded-full transition duration-500 hover:scale-[1.05] active:scale-[1.03];
 }
 
-h1 {
-  @apply text-6xl text-white mb-8;
+.tag {
+  @apply bg-gray-700 px-3 py-1 shadow text-white text-sm font-mono tracking-wider rounded-full;
 }
-h2 {
-  @apply text-4xl text-sky-500 mb-4 mt-10;
+
+.background {
+  @apply bg-right-top bg-gradient-to-tr from-gray-900 via-gray-800/90 via-65% to-gray-950 to-90%;
 }
 
 /* SCROLLBAR STYLING */

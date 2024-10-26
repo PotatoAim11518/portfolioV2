@@ -73,9 +73,6 @@ export default function Header() {
               >
                 {link.name}
               </button>
-              {/* <a id={link.id} className="flex text-xl ">
-                {link.name}
-              </a> */}
               {path === link.id && (
                 <motion.div
                   layoutId="active-pill"
