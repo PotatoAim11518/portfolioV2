@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <div className="flex flex-col justify-center items-center">
       <Heading>Projects</Heading>
-      <section>
+      <section className="m-10">
         <Project name={projectA.name} tags={projectA.tags} />
         <Project name={projectA.name} tags={projectA.tags} />
         <Project name={projectA.name} tags={projectA.tags} />

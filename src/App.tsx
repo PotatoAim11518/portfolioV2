@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Section from "./components/Sections/Section";
 import Skills from "./components/Sections/Skills";
 import Projects from "./components/Sections/Projects";
+import Contact from "./components/Sections/Contact";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       <Section id="projects">
         <Projects />
       </Section>
-      <Section id="contact">Contact Me</Section>
+      <Section id="contact">
+        <Contact />
+      </Section>
       <Footer />
     </main>
   );
