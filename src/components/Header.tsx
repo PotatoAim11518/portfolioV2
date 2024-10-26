@@ -47,7 +47,7 @@ export default function Header() {
   }, [path]);
 
   return (
-    <header className="fixed top-6 z-10">
+    <header className="fixed top-6 z-20">
       <nav
         className={clsx(
           "px-4 py-2 rounded-full transition duration-500 backdrop-blur-sm",
