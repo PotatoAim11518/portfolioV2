@@ -1,7 +1,21 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, useState } from "react";
 import Heading from "../../Heading";
+import { MAX_CHARACTER_COUNT } from "../../../lib/constants";
+import clsx from "clsx";
 
 export default function Contact() {
+  const [message, setMessage] = useState("");
+  const count = message.length;
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const nextMessage = event.currentTarget.value;
+    if (nextMessage.length <= MAX_CHARACTER_COUNT) {
+      setMessage(event.currentTarget.value);
+    } else {
+      setMessage(message);
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center items-center">
       <Heading>Contact</Heading>
@@ -25,14 +39,14 @@ export default function Contact() {
                 required
                 placeholder="example@abc.com"
               />
-              {/* <InputField
-                fieldName="Favorite bird"
+              <InputField
+                fieldName="Place you want to travel to"
                 type="text"
-                placeholder="e.g. Sparrow"
-              /> */}
+                placeholder="e.g. The Moon"
+              />
               {/* implement honey pot */}
             </div>
-            <div className="flex flex-col h-full w-full gap-2">
+            <div className="relative flex flex-col h-full w-full gap-2">
               <label
                 htmlFor="message"
                 className="text-white text-xl font-light tracking-wide leading-relaxed"
@@ -40,12 +54,21 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+                value={message}
+                onChange={handleChange}
                 name="message"
                 id="message"
                 required
                 className="px-4 py-4 min-h-72 max-h-72 w-full placeholder:text-indigo-200 placeholder:italic text-white ring-sky-500 focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition"
               />
-              {/* implement word count */}
+              <p
+                className={clsx("relative text-white text-right", {
+                  "text-red-600": count >= MAX_CHARACTER_COUNT,
+                })}
+              >
+                <span className="font-semibold">{count}</span>/
+                {MAX_CHARACTER_COUNT}
+              </p>
             </div>
           </fieldset>
           <button

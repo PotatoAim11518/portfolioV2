@@ -1,6 +1,7 @@
 import { HomeIcon } from "@radix-ui/react-icons";
 
 export const GITHUB_LINK = "https://github.com/PotatoAim11518";
+export const MAX_CHARACTER_COUNT = 1000;
 
 export const navLinks = [
   {
