@@ -7,6 +7,7 @@ export default {
         city: "city 2s forwards",
         sheen: "sheen 4s ease infinite",
         tooltip: "tooltip 0.3s ",
+        resaturate: "saturate 2s 1s forwards",
       },
       keyframes: {
         city: {
@@ -35,6 +36,14 @@ export default {
           "100%": {
             transform: "translateY(0%)",
             opacity: 1,
+          },
+        },
+        saturate: {
+          "0%": {
+            filter: "saturate(0)",
+          },
+          "100%": {
+            filter: "saturate(1)",
           },
         },
       },

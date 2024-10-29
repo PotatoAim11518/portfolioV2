@@ -25,11 +25,12 @@ export default function Contact() {
                 required
                 placeholder="example@abc.com"
               />
-              <InputField
+              {/* <InputField
                 fieldName="Favorite bird"
                 type="text"
                 placeholder="e.g. Sparrow"
-              />
+              /> */}
+              {/* implement honey pot */}
             </div>
             <div className="flex flex-col h-full w-full gap-2">
               <label

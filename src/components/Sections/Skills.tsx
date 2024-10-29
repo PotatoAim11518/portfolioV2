@@ -86,35 +86,33 @@ const learning: Skill[] = [
 
 export default function Skills() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center gap-y-10 ">
       <Heading>Skills</Heading>
-      <div className="flex justify-between items-start w-full m-10">
-        <aside className="w-[30%] text-xl leading-relaxed tracking-wide text-white font-thin">
-          Experienced in fullstack development, multiple state management
+      <section className="flex justify-around items-stretch gap-x-8 mt-10">
+        <div className="grid grid-cols-3 xl:grid-cols-5 gap-8">
+          {skills.map((icon) => (
+            <div className="flex justify-center items-center">
+              <Icon
+                key={icon.name}
+                aria-label={icon.name}
+                icon={icon.icon}
+                height="6rem"
+                width="6rem"
+                className="peer drop-shadow-md"
+              />
+              <div className="absolute hidden shadow-md peer-hover:inline-block pointer-events-none px-4 py-1 -bottom-4 tooltip animate-tooltip">
+                {icon.name}
+              </div>
+            </div>
+          ))}
+        </div>
+        <aside className="w-[40%] textbox">
+          I'm experienced in fullstack development, multiple state management
           systems, and plenty of third-party libraries. In my free time, I hope
           to pick up another language or two and build something out of my
           comfort zone. Learning is a life-long skill!
         </aside>
-        <section className="w-[70%] flex justify-end items-center">
-          <div className="grid grid-cols-3 xl:grid-cols-5 gap-7">
-            {skills.map((icon) => (
-              <div className="relative flex justify-center items-center">
-                <Icon
-                  key={icon.name}
-                  aria-label={icon.name}
-                  icon={icon.icon}
-                  height="6rem"
-                  width="6rem"
-                  className="peer drop-shadow-md"
-                />
-                <div className="absolute hidden peer-hover:inline-block pointer-events-none px-4 py-1 -bottom-4 tooltip animate-tooltip">
-                  {icon.name}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+      </section>
       <Subskills skillList={otherSkills}>Other technical skills</Subskills>
       <Subskills skillList={learning}>What I'm learning next</Subskills>
     </div>

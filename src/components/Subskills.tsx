@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import clsx from "clsx";
 import { Skill } from "../lib/types";
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 type SubskillsProps = {
   children: ReactNode;
@@ -14,9 +15,14 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
       <h2 className="font-thin leading-snug">{children}</h2>
       <ul className="flex flex-wrap justify-center gap-3">
         {skillList.map((skill) => (
-          <a
+          <motion.a
             target="blank"
             href={skill.link}
+            initial={{ scale: 1 }}
+            whileHover={{
+              scale: 1.03,
+              transition: { type: "spring" },
+            }}
             className={clsx(
               "flex justify-center items-center px-5 py-2 gap-x-2 text-center tooltip",
               {
@@ -30,7 +36,7 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
                 <Icon aria-label={skill.name} icon={skill.icon} />
               </span>
             )}
-          </a>
+          </motion.a>
         ))}
       </ul>
     </section>

@@ -8,7 +8,10 @@
     @apply text-6xl text-white;
   }
   h2 {
-    @apply text-4xl text-white/80 mb-4 mt-10;
+    @apply text-6xl text-white/80 mb-4 mt-10;
+  }
+  h3 {
+    @apply bg-gradient-to-tl from-indigo-200 to-sky-500 bg-clip-text text-transparent text-3xl font-semibold;
   }
 }
 
@@ -17,7 +20,7 @@
 }
 
 .tooltip {
-  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-sm font-semibold tracking-wider rounded-full transition duration-500 hover:scale-[1.05] active:scale-[1.03];
+  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-sm font-semibold tracking-wider rounded-full shadow-sm;
 }
 
 .tag {
@@ -26,6 +29,10 @@
 
 .button {
   @apply bg-gradient-to-tl hover:from-indigo-500 hover:via-cyan-400 hover:to-indigo-500 px-6 py-2 mt-4 shadow-md border-[1.5px] border-indigo-300/50 text-white rounded-md from-gray-700 to-gray-900 transition-all scale-95 hover:scale-100 active:scale-[0.97] hover:animate-sheen;
+}
+
+.textbox {
+  @apply bg-gray-900 bg-gradient-to-br from-gray-900 via-transparent to-white/10 rounded-md p-6 shadow-md text-xl leading-relaxed tracking-wide text-white font-thin;
 }
 
 .background {
