@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import clsx from "clsx";
-import { Skill } from "../lib/types";
+import { Skill } from "../../../lib/types";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 

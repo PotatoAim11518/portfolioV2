@@ -1,10 +1,36 @@
+import { HomeIcon } from "@radix-ui/react-icons";
+
 export const GITHUB_LINK = "https://github.com/PotatoAim11518";
+
+export const navLinks = [
+  {
+    name: (
+      <span className="flex justify-center items-center gap-x-2">
+        <HomeIcon /> About
+      </span>
+    ),
+    id: "#about",
+  },
+  {
+    name: "Skills",
+    id: "#skills",
+  },
+  {
+    name: "Projects",
+    id: "#projects",
+  },
+  {
+    name: "Contact",
+    id: "#contact",
+  },
+];
 
 export const PROJECTS = [
   {
     name: "Project Name A",
     image: "src/assets/marco-murakami-Ap4wkcAr4Wk-unsplash.jpg",
     github: "https://github.com/PotatoAim11518",
+    href: "/",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsa cumque modi quam nulla, in, voluptas dolor nemo architecto, sunt accusantium eos quia voluptate amet.",
     tags: ["React", "TailwindCSS", "Framer Motion", "Vercel"],
@@ -13,6 +39,7 @@ export const PROJECTS = [
     name: "Project Name B",
     image: "src/assets/marco-murakami-Ap4wkcAr4Wk-unsplash.jpg",
     github: "https://github.com/PotatoAim11518",
+    href: "/",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sit adipisci facere nulla fuga accusantium? Labore, quod ex.",
     tags: ["React", "TailwindCSS", "Redux"],
@@ -21,6 +48,7 @@ export const PROJECTS = [
     name: "Project Name C",
     image: "src/assets/marco-murakami-Ap4wkcAr4Wk-unsplash.jpg",
     github: "https://github.com/PotatoAim11518",
+    href: "/",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ipsam molestiae illum aliquid inventore odit voluptatibus obcaecati deleniti blanditiis sapiente impedit, alias sunt ullam! Cumque dignissimos sed nam quos illum omnis nobis repellendus expedita asperiores eum.",
     tags: ["React", "NextJS", "TailwindCSS", "Socket.IO"],

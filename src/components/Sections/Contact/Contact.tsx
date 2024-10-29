@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from "react";
-import Heading from "../Heading";
+import Heading from "../../Heading";
 
 export default function Contact() {
   return (

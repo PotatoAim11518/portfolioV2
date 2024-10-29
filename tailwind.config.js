@@ -6,6 +6,7 @@ export default {
       animation: {
         city: "city 2s forwards",
         sheen: "sheen 4s ease infinite",
+        glow: "sheen 3s linear infinite",
         tooltip: "tooltip 0.3s ",
         resaturate: "saturate 2s 1s forwards",
       },

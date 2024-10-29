@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
-import Heading from "../Heading";
-import { Skill } from "../../lib/types";
-import Subskills from "../Subskills";
+import Heading from "../../Heading";
+import { Skill } from "../../../lib/types";
+import Subskills from "./Subskills";
 
 const skills: Skill[] = [
   { name: "Javascript", icon: "skill-icons:javascript" },
@@ -86,12 +86,12 @@ const learning: Skill[] = [
 
 export default function Skills() {
   return (
-    <div className="flex flex-col justify-center items-center gap-y-10 ">
+    <div className="flex flex-col justify-center items-center gap-y-12 ">
       <Heading>Skills</Heading>
       <section className="flex justify-around items-stretch gap-x-8 mt-10">
         <div className="grid grid-cols-3 xl:grid-cols-5 gap-8">
           {skills.map((icon) => (
-            <div className="flex justify-center items-center">
+            <div className="relative flex justify-center items-center">
               <Icon
                 key={icon.name}
                 aria-label={icon.name}
@@ -106,11 +106,9 @@ export default function Skills() {
             </div>
           ))}
         </div>
-        <aside className="w-[40%] textbox">
-          I'm experienced in fullstack development, multiple state management
-          systems, and plenty of third-party libraries. In my free time, I hope
-          to pick up another language or two and build something out of my
-          comfort zone. Learning is a life-long skill!
+        <aside className="w-[40%] textbox whitespace-pre-line">
+          {`I'm experienced in fullstack development, multiple state management systems, and plenty of third-party libraries. In my free time, I hope to pick up another language or two and build something out of my comfort zone.
+          \nI'm always open to something new, of course--learning is a life-long skill!`}
         </aside>
       </section>
       <Subskills skillList={otherSkills}>Other technical skills</Subskills>

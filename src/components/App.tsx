@@ -1,11 +1,11 @@
-import "./App.css";
-import About from "./components/Sections/About";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Section from "./components/Sections/Section";
-import Skills from "./components/Sections/Skills";
-import Projects from "./components/Sections/Projects";
-import Contact from "./components/Sections/Contact";
+import "../App.css";
+import About from "./Sections/About/About";
+import Footer from "./Footer";
+import Header from "./Header";
+import Section from "./Sections/Section";
+import Skills from "./Sections/Skills/Skills";
+import Projects from "./Sections/Projects/Projects";
+import Contact from "./Sections/Contact/Contact";
 
 function App() {
   return (

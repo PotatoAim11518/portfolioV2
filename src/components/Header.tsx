@@ -1,30 +1,7 @@
-import { HomeIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-
-const navLinks = [
-  {
-    name: (
-      <span className="flex justify-center items-center gap-x-2">
-        <HomeIcon /> About
-      </span>
-    ),
-    id: "#about",
-  },
-  {
-    name: "Skills",
-    id: "#skills",
-  },
-  {
-    name: "Projects",
-    id: "#projects",
-  },
-  {
-    name: "Contact",
-    id: "#contact",
-  },
-];
+import { navLinks } from "../lib/constants";
 
 export default function Header() {
   const [path, setPath] = useState("");
