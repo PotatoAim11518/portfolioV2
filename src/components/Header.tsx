@@ -82,8 +82,6 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        {/* <ul className="flex -right-16 top-0">
-        </ul> */}
       </nav>
     </header>
   );

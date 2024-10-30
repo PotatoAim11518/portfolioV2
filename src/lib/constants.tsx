@@ -1,11 +1,29 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
-import { HomeIcon } from "@radix-ui/react-icons";
-
 export const GITHUB = "https://github.com/PotatoAim11518";
 export const LINKEDIN = "https://www.linkedin.com/in/wilson-huang-39198039/";
+
 export const MAX_CHARACTER_COUNT = 1000;
 
-export const NAV_LINKS = [
+export type NavLink = {
+  name: string;
+  hash?: string;
+};
+
+export type ExternalLink = {
+  name: string;
+  icon: string;
+  href: string;
+};
+
+type Project = {
+  name: string;
+  image: string;
+  github: string;
+  href: string;
+  description: string;
+  tags: string[];
+};
+
+export const NAV_LINKS: NavLink[] = [
   {
     name: "About",
     hash: "#about",
@@ -24,20 +42,20 @@ export const NAV_LINKS = [
   },
 ];
 
-export const EXTERNAL_LINKS = [
+export const EXTERNAL_LINKS: ExternalLink[] = [
   {
-    name: "linkedin",
+    name: "LinkedIn",
     icon: "cib:linkedin",
     href: LINKEDIN,
   },
   {
-    name: "github",
+    name: "GitHub",
     icon: "cib:github",
     href: GITHUB,
   },
 ];
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     name: "Project Name A",
     image: "src/assets/marco-murakami-Ap4wkcAr4Wk-unsplash.jpg",
