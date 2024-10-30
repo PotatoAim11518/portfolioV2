@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GITHUB_LINK } from "../../../lib/constants";
+import { GITHUB } from "../../../lib/constants";
 import { useState } from "react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -25,7 +25,7 @@ export default function SeeMoreLink() {
 
   return (
     <motion.a
-      href={GITHUB_LINK}
+      href={GITHUB}
       target="blank"
       initial={{ scale: 1 }}
       whileHover={{

@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { NAV_LINKS } from "../lib/constants";
+import { EXTERNAL_LINKS, NAV_LINKS } from "../lib/constants";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { HomeIcon } from "@radix-ui/react-icons";
 
 export default function Header() {
@@ -25,28 +26,30 @@ export default function Header() {
   }, [path]);
 
   return (
-    <header className="fixed top-6 z-20">
+    <header
+      className={clsx(
+        "fixed flex items-center justify-center top-6 z-20 rounded-full backdrop-blur-sm",
+        {}
+      )}
+    >
       <nav
-        className={clsx(
-          "px-4 py-2 rounded-full transition duration-500 backdrop-blur-sm",
-          {
-            "bg-indigo-300/10 shadow-md": scrollPos > 200,
-          }
-        )}
+        className={clsx("px-4 py-2 rounded-full transition", {
+          "bg-gray-900/75 shadow-md": scrollPos > 200,
+        })}
       >
         <ul className="flex flex-row items-center gap-x-4 ">
           {NAV_LINKS.map((link) => (
             <li
-              key={link.id}
+              key={link.hash}
               className={clsx(
-                "relative text-white tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-overlay",
+                "relative text-white tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-exclusion",
                 {
-                  "text-white/50": path !== link.id,
+                  "text-slate-400": path !== link.hash,
                 }
               )}
             >
               <button
-                onClick={() => handleNav(link.id)}
+                onClick={() => handleNav(link.hash)}
                 className="flex text-xl "
               >
                 {link.name === "About" ? (
@@ -58,7 +61,7 @@ export default function Header() {
                   link.name
                 )}
               </button>
-              {path === link.id && (
+              {path === link.hash && (
                 <motion.div
                   layoutId="active-pill"
                   className="absolute inset-0 h-auto w-full shadow-md mix-blend-color-dodge sheen animate-sheen"
@@ -68,7 +71,19 @@ export default function Header() {
               )}
             </li>
           ))}
+          {EXTERNAL_LINKS.map((link) => (
+            <li
+              key={link.name}
+              className="text-slate-400 hover:text-white p-2 transition mix-blend-difference"
+            >
+              <a className="" href={link.href} target="blank">
+                <Icon icon={link.icon} height={28} width={28} />
+              </a>
+            </li>
+          ))}
         </ul>
+        {/* <ul className="flex -right-16 top-0">
+        </ul> */}
       </nav>
     </header>
   );

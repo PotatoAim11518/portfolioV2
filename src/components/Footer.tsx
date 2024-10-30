@@ -11,7 +11,7 @@ export default function Footer() {
         <ul className="flex flex-col gap-y-1">
           {NAV_LINKS.map((link) => (
             <li key={link.name} className="tracking-widest">
-              <a href={link.id}>{link.name}</a>
+              <a href={link.hash}>{link.name}</a>
             </li>
           ))}
         </ul>

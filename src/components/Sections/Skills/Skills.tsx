@@ -86,7 +86,7 @@ const learning: Skill[] = [
 
 export default function Skills() {
   return (
-    <div className="flex flex-col justify-center items-center gap-y-12 ">
+    <div className="flex flex-col justify-center items-center">
       <Heading>Skills</Heading>
       <section className="flex justify-around items-stretch gap-x-8 mt-10">
         <div className="grid grid-cols-3 xl:grid-cols-5 gap-8">

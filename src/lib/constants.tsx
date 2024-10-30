@@ -1,22 +1,39 @@
-export const GITHUB_LINK = "https://github.com/PotatoAim11518";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { HomeIcon } from "@radix-ui/react-icons";
+
+export const GITHUB = "https://github.com/PotatoAim11518";
+export const LINKEDIN = "https://www.linkedin.com/in/wilson-huang-39198039/";
 export const MAX_CHARACTER_COUNT = 1000;
 
 export const NAV_LINKS = [
   {
     name: "About",
-    id: "#about",
+    hash: "#about",
   },
   {
     name: "Skills",
-    id: "#skills",
+    hash: "#skills",
   },
   {
     name: "Projects",
-    id: "#projects",
+    hash: "#projects",
   },
   {
     name: "Contact",
-    id: "#contact",
+    hash: "#contact",
+  },
+];
+
+export const EXTERNAL_LINKS = [
+  {
+    name: "linkedin",
+    icon: "cib:linkedin",
+    href: LINKEDIN,
+  },
+  {
+    name: "github",
+    icon: "cib:github",
+    href: GITHUB,
   },
 ];
 
