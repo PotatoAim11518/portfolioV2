@@ -16,6 +16,7 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
       <ul className="flex flex-wrap justify-center gap-3">
         {skillList.map((skill) => (
           <motion.a
+            key={skill.name}
             target="blank"
             href={skill.link}
             initial={{ scale: 1 }}

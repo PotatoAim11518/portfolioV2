@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-const MotionArrowRight = motion(ArrowRightIcon);
+const MotionArrowRight = motion.create(ArrowRightIcon);
 
 const variants = {
   start: {

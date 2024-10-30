@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { navLinks } from "../lib/constants";
+import { NAV_LINKS } from "../lib/constants";
+import { HomeIcon } from "@radix-ui/react-icons";
 
 export default function Header() {
   const [path, setPath] = useState("");
@@ -34,11 +35,11 @@ export default function Header() {
         )}
       >
         <ul className="flex flex-row items-center gap-x-4 ">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <li
               key={link.id}
               className={clsx(
-                "relative text-white hover:text-white px-6 py-2 transition mix-blend-overlay",
+                "relative text-white tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-overlay",
                 {
                   "text-white/50": path !== link.id,
                 }
@@ -48,7 +49,14 @@ export default function Header() {
                 onClick={() => handleNav(link.id)}
                 className="flex text-xl "
               >
-                {link.name}
+                {link.name === "About" ? (
+                  <span className="flex justify-center items-center gap-x-2">
+                    <HomeIcon />
+                    {link.name}
+                  </span>
+                ) : (
+                  link.name
+                )}
               </button>
               {path === link.id && (
                 <motion.div

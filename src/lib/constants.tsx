@@ -1,15 +1,9 @@
-import { HomeIcon } from "@radix-ui/react-icons";
-
 export const GITHUB_LINK = "https://github.com/PotatoAim11518";
 export const MAX_CHARACTER_COUNT = 1000;
 
-export const navLinks = [
+export const NAV_LINKS = [
   {
-    name: (
-      <span className="flex justify-center items-center gap-x-2">
-        <HomeIcon /> About
-      </span>
-    ),
+    name: "About",
     id: "#about",
   },
   {

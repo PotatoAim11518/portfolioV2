@@ -31,8 +31,16 @@
   @apply bg-gray-700 px-3 py-1 shadow text-white text-sm font-mono tracking-wider rounded-full;
 }
 
-.button {
-  @apply bg-gradient-to-tl hover:from-indigo-500 hover:via-cyan-400 hover:to-indigo-500 px-6 py-2 mt-4 shadow-md border-[1.5px] border-indigo-300/50 text-white rounded-md from-gray-700 to-gray-900 transition-all scale-95 hover:scale-100 active:scale-[0.97] hover:animate-sheen;
+.btn {
+  @apply bg-gradient-to-tl px-6 py-2 mt-4 shadow-md border-[1.5px] border-indigo-300/50 text-white rounded-md from-gray-700 to-gray-900 transition-all scale-95;
+}
+
+.btn-hover {
+  @apply hover:from-indigo-500 hover:via-cyan-400 hover:to-indigo-500 hover:scale-100 hover:animate-sheen active:scale-[0.97];
+}
+
+.btn-loading {
+  @apply bg-gray-700 px-6 py-2 mt-4 shadow-md border-[1.5px]  border-indigo-300/50 text-white/50 rounded-md from-gray-700 to-gray-900 transition-all scale-95;
 }
 
 .textbox {

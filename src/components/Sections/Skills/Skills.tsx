@@ -91,9 +91,11 @@ export default function Skills() {
       <section className="flex justify-around items-stretch gap-x-8 mt-10">
         <div className="grid grid-cols-3 xl:grid-cols-5 gap-8">
           {skills.map((icon) => (
-            <div className="relative flex justify-center items-center">
+            <div
+              key={icon.name}
+              className="relative flex justify-center items-center"
+            >
               <Icon
-                key={icon.name}
                 aria-label={icon.name}
                 icon={icon.icon}
                 height="6rem"

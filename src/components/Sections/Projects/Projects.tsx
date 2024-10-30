@@ -9,7 +9,7 @@ export default function Projects() {
       <Heading>Projects</Heading>
       <section className="flex flex-col my-10">
         {PROJECTS.map((project) => (
-          <Project project={project} />
+          <Project key={project.name} project={project} />
         ))}
       </section>
       <SeeMoreLink />

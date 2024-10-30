@@ -1,4 +1,4 @@
-import { navLinks } from "../lib/constants";
+import { NAV_LINKS } from "../lib/constants";
 
 export default function Footer() {
   return (
@@ -9,8 +9,8 @@ export default function Footer() {
       <nav>
         <h3 className="text-xl mb-4">Places</h3>
         <ul className="flex flex-col gap-y-1">
-          {navLinks.map((link) => (
-            <li className="tracking-widest">
+          {NAV_LINKS.map((link) => (
+            <li key={link.name} className="tracking-widest">
               <a href={link.id}>{link.name}</a>
             </li>
           ))}

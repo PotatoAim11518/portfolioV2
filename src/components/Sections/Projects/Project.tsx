@@ -61,7 +61,9 @@ export default function Project({ project }: ProjectProps) {
           </p>
           <ul className="flex flex-wrap gap-2 m-2">
             {tags.map((tag) => (
-              <li className="tag">{tag}</li>
+              <li key={tag} className="tag">
+                {tag}
+              </li>
             ))}
           </ul>
         </div>
