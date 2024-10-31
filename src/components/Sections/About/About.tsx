@@ -1,10 +1,18 @@
+import { VARIANTS } from "../../../lib/motion";
 import RandomFactBox from "./RandomFactBox";
+import { motion } from "framer-motion";
 
 const PROFILE_IMAGE = "src/assets/wilsonhuang.jpg";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center">
+    <motion.div
+      variants={VARIANTS}
+      initial="initial"
+      whileInView="visible"
+      transition={{ duration: 1 }}
+      className="flex flex-col items-center"
+    >
       <h1 className="text-8xl mb-2">
         I'm{" "}
         <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-tl from-indigo-500 via-cyan-400 to-indigo-500 animate-sheen">
@@ -53,6 +61,6 @@ export default function About() {
         </section>
         <RandomFactBox />
       </div>
-    </div>
+    </motion.div>
   );
 }

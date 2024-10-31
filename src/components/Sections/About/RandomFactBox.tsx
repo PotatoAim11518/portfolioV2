@@ -1,42 +1,28 @@
 // import { motion, useMotionValue } from "framer-motion";
-import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { FACTS } from "../../../lib/constants";
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
 
-const variants = {
+const factBoxVariants = {
   initial: { y: 0 },
   visible: { y: -60 },
 };
-export default function RandomFactBox() {
-  // const y = useMotionValue(0);
-  // const pos = useTransform(y, [0, -180 * FACTS.length], [1, 2]);
-  const cards = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: cards,
-  //   offset: ["0 1", "1.5 1"],
-  // });
-  // const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  // const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 
+export default function RandomFactBox() {
   return (
     <div className="relative h-full w-auto mx-11">
       <div
         aria-label="t-upper-panel"
         className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] bottom-[220px]"
       />
-      <div className="[mask-image:_linear-gradient(to_top,transparent_0,0,_black_calc(100%-100px),transparent_100%)]">
+      <div className="[mask-image:_linear-gradient(to_top,transparent_0,0,_black_calc(100%-50px),transparent_100%)]">
         <div className="h-[320px]">
           <motion.div
             className="absolute flex flex-col left-[33%] top-[240px]"
             dragConstraints={{ top: -180 * FACTS.length, bottom: 0 }}
             drag="y"
-            // style={{ scale: scaleProgress }}
           >
-            <ul
-              ref={cards}
-              className="absolute flex flex-col-reverse justify-center items-center gap-y-14"
-            >
+            <ul className="absolute flex flex-col-reverse justify-center items-center gap-y-14">
               {FACTS.map((fact, i) => (
                 <motion.li
                   key={i}
@@ -46,10 +32,14 @@ export default function RandomFactBox() {
                   style={{
                     mask: "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/11px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/11px 51% repeat-x",
                   }}
-                  whileInView="visible"
+                  variants={factBoxVariants}
                   initial="initial"
-                  variants={variants}
-                  transition={{ ease: "easeInOut", duration: 1 }}
+                  whileInView="visible"
+                  transition={{
+                    type: "spring",
+                    ease: "easeInOut",
+                    duration: 2,
+                  }}
                 >
                   {fact}
                 </motion.li>
