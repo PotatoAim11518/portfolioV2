@@ -1,22 +1,24 @@
 // import { motion, useMotionValue } from "framer-motion";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import { FACTS } from "../../../lib/constants";
 import clsx from "clsx";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
+const variants = {
+  initial: { y: 0 },
+  visible: { y: -60 },
+};
 export default function RandomFactBox() {
-  const y = useMotionValue(0);
-  const pos = useTransform(y, [0, 100], [0, -100]);
+  // const y = useMotionValue(0);
+  // const pos = useTransform(y, [0, -180 * FACTS.length], [1, 2]);
   const cards = useRef(null);
-  // const mask = useTransform(
-  //   y,
-  //   [0, -40, -100],
-  //   [
-  //     "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/16px 60% repeat-x",
-  //     "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/16px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 51% repeat-x",
-  //     "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/16px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 51% repeat-x",
-  //   ]
-  // );
+  // const { scrollYProgress } = useScroll({
+  //   target: cards,
+  //   offset: ["0 1", "1.5 1"],
+  // });
+  // const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  // const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+
   return (
     <div className="relative h-full w-auto mx-11">
       <div
@@ -26,19 +28,17 @@ export default function RandomFactBox() {
       <div className="[mask-image:_linear-gradient(to_top,transparent_0,0,_black_calc(100%-100px),transparent_100%)]">
         <div className="h-[320px]">
           <motion.div
-            className="absolute flex flex-col left-[33%] top-[190px]"
-            // dragConstraints={{ top: 400, bottom: -400 }}
+            className="absolute flex flex-col left-[33%] top-[240px]"
+            dragConstraints={{ top: -180 * FACTS.length, bottom: 0 }}
             drag="y"
-            style={{ translateY: pos }}
-            // dragElastic={{ top: 0.5, bottom: 0.5 }}
-            // whileDrag={{ scale: 1.1 }}
+            // style={{ scale: scaleProgress }}
           >
             <ul
               ref={cards}
               className="absolute flex flex-col-reverse justify-center items-center gap-y-14"
             >
               {FACTS.map((fact, i) => (
-                <li
+                <motion.li
                   key={i}
                   className={clsx(
                     "text-center text-sm place-content-center tracking-tight p-2 -top-24 left-20 h-36 w-28 shadow-md bg-stone-300"
@@ -46,9 +46,13 @@ export default function RandomFactBox() {
                   style={{
                     mask: "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/11px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/11px 51% repeat-x",
                   }}
+                  whileInView="visible"
+                  initial="initial"
+                  variants={variants}
+                  transition={{ ease: "easeInOut", duration: 1 }}
                 >
                   {fact}
-                </li>
+                </motion.li>
               ))}
             </ul>
           </motion.div>
@@ -67,7 +71,7 @@ export default function RandomFactBox() {
           aria-label="front-panel"
           className="z-20 relative place-content-center bg-gradient-to-tl from-stone-900 to-stone-800 h-[200px] w-[200px] right-0 top-0"
         >
-          <h3 className="text-center p-6">Random Fact Cube</h3>
+          <h3 className="text-center p-6">Random Fact Dispenser</h3>
         </div>
         <div
           aria-label="tr-triangle"

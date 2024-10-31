@@ -51,9 +51,7 @@ export default function About() {
             {` if you'd like to chat!`}
           </p>
         </section>
-        {/* <section className="flex mt-auto"> */}
         <RandomFactBox />
-        {/* </section> */}
       </div>
     </div>
   );
