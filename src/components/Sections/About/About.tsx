@@ -1,3 +1,5 @@
+import RandomFactBox from "./RandomFactBox";
+
 const PROFILE_IMAGE = "src/assets/wilsonhuang.jpg";
 
 export default function About() {
@@ -25,12 +27,13 @@ export default function About() {
           style={{ backgroundImage: `url(${PROFILE_IMAGE})` }}
         />
       </section>
-      <div className="flex flex-row items-center justify-center">
-        <section className="relative my-10">
-          <h3 className="relative top-4 left-3 drop-shadow-md z-10">
+
+      <div className="h-full flex flex-row items-end justify-between gap-x-8 overflow-hidden">
+        <section className="my-10">
+          <h3 className="relative top-4 left-3 uppercase drop-shadow-md z-10">
             About me
           </h3>
-          <p className="max-w-[60%] textbox whitespace-pre-wrap">
+          <p className="textbox whitespace-pre-wrap">
             {`Before I made the switch into software engineering I was a wearer of many hats--salesman, data analyst, community manager, and a few more. With each role, there was always one connecting thread: leveraging technology to solve those problems programmatically.
             \nOver time I picked up more and more coding skills to the point where my thirst for knowledge could no longer be ignored. I made the leap, tackled a 1,000-hour bootcamp, and landed a fantastic role at `}
             <span className="text-[#ff00bf] font-bold">
@@ -41,16 +44,16 @@ export default function About() {
             {
               <span>
                 <a href="/#contact" className="font-semibold text-sky-500">
-                  Reach out
+                  Contact me
                 </a>
               </span>
             }
             {` if you'd like to chat!`}
           </p>
         </section>
-        <h3 className="border-dotted border-4 p-6">
-          Random Fact Box component
-        </h3>
+        {/* <section className="flex mt-auto"> */}
+        <RandomFactBox />
+        {/* </section> */}
       </div>
     </div>
   );

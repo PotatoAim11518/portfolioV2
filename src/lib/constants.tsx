@@ -5,7 +5,7 @@ export const MAX_CHARACTER_COUNT = 1000;
 
 export type NavLink = {
   name: string;
-  hash?: string;
+  hash: string;
 };
 
 export type ExternalLink = {
@@ -83,4 +83,14 @@ export const PROJECTS: Project[] = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ipsam molestiae illum aliquid inventore odit voluptatibus obcaecati deleniti blanditiis sapiente impedit, alias sunt ullam! Cumque dignissimos sed nam quos illum omnis nobis repellendus expedita asperiores eum.",
     tags: ["React", "NextJS", "TailwindCSS", "Socket.IO"],
   },
+];
+
+export const FACTS = [
+  "One of my favorite hobbies is decimating the local crab population",
+  "I'm a huge Final Fantasy fan.",
+  'One of my hobbies is technical art, as in: what I make is "technically" art.',
+  "My pole vault PR is 11'4\"",
+  "I really want to live and work in Japan someday",
+  "Cooking is my meditation.",
+  "My favorite animals are whale sharks .___.",
 ];

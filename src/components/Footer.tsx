@@ -17,12 +17,12 @@ export default function Footer() {
         mt-auto
         bg-zinc-950
         text-white/80
-        border-t-[1px]
+        border-t
         border-t-gray-600
         p-10
         shadow-md"
     >
-      <small className="h-full col-start-2 col-span-2 text-center items-center pt-2 border-r-white/30 border-r-[1px]">
+      <small className="h-full col-start-2 col-span-2 text-center items-center pt-2 border-r-white/30 border-r">
         &copy; Wilson Huang 2024
       </small>
       <FooterNav heading="Here" links={NAV_LINKS} classes="col-start-4" />
