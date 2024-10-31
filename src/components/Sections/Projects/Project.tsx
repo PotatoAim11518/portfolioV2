@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { viewVariants } from "../../../lib/motion";
 
 type ProjectProps = {
   project: {
@@ -22,7 +23,13 @@ export default function Project({ project }: ProjectProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="grid grid-cols-8 grid-rows-auto py-14">
+    <motion.section
+      variants={viewVariants}
+      initial="initial"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="grid grid-cols-8 grid-rows-auto py-14"
+    >
       <motion.a
         target="blank"
         href={href}
@@ -68,6 +75,6 @@ export default function Project({ project }: ProjectProps) {
           </ul>
         </div>
       </motion.aside>
-    </section>
+    </motion.section>
   );
 }

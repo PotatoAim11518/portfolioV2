@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Skill } from "../../../lib/types";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { viewVariants } from "../../../lib/motion";
 
 type SubskillsProps = {
   children: ReactNode;
@@ -11,7 +12,13 @@ type SubskillsProps = {
 
 export default function Subskills({ children, skillList }: SubskillsProps) {
   return (
-    <section className="flex flex-col items-center w-full">
+    <motion.section
+      variants={viewVariants}
+      initial="initial"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="flex flex-col items-center w-full"
+    >
       <h2 className="font-thin leading-snug">{children}</h2>
       <ul className="flex flex-wrap justify-center gap-x-6 gap-y-4">
         {skillList.map((skill) => (
@@ -40,6 +47,6 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
           </motion.a>
         ))}
       </ul>
-    </section>
+    </motion.section>
   );
 }

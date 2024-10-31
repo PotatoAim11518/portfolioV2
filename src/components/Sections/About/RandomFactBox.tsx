@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FACTS } from "../../../lib/constants";
 import clsx from "clsx";
+import { viewVariants } from "../../../lib/motion";
 
 const factBoxVariants = {
   initial: { y: 0 },
@@ -10,7 +11,21 @@ const factBoxVariants = {
 
 export default function RandomFactBox() {
   return (
-    <div className="relative h-full w-auto mx-11">
+    <motion.div
+      variants={viewVariants}
+      initial="initial"
+      whileInView={{
+        y: 0,
+        x: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeInOut",
+        delay: 1.2,
+      }}
+      className="relative h-full w-auto mx-11"
+    >
       <div
         aria-label="t-upper-panel"
         className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] bottom-[220px]"
@@ -39,6 +54,7 @@ export default function RandomFactBox() {
                     type: "spring",
                     ease: "easeInOut",
                     duration: 2,
+                    delay: 0.3,
                   }}
                 >
                   {fact}
@@ -61,7 +77,9 @@ export default function RandomFactBox() {
           aria-label="front-panel"
           className="z-20 relative place-content-center bg-gradient-to-tl from-stone-900 to-stone-800 h-[200px] w-[200px] right-0 top-0"
         >
-          <h3 className="text-center p-6">Random Fact Dispenser</h3>
+          <h3 className="text-center p-6 glow animate-sheen">
+            Random Fact Dispenser
+          </h3>
         </div>
         <div
           aria-label="tr-triangle"
@@ -76,6 +94,6 @@ export default function RandomFactBox() {
           className="absolute bg-fuchsia-600 h-[160px] w-[40px] left-[200px] top-0"
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

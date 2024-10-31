@@ -8,7 +8,7 @@ export default {
         sheen: "sheen 4s ease infinite",
         glow: "sheen 3s linear infinite",
         tooltip: "tooltip 0.3s ",
-        resaturate: "saturate 2s 1s forwards",
+        resaturate: "saturate 0.6s 1s forwards",
       },
       keyframes: {
         city: {

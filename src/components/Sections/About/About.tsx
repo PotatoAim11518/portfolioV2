@@ -1,4 +1,4 @@
-import { VARIANTS } from "../../../lib/motion";
+import { viewVariants } from "../../../lib/motion";
 import RandomFactBox from "./RandomFactBox";
 import { motion } from "framer-motion";
 
@@ -6,38 +6,95 @@ const PROFILE_IMAGE = "src/assets/wilsonhuang.jpg";
 
 export default function About() {
   return (
-    <motion.div
-      variants={VARIANTS}
-      initial="initial"
-      whileInView="visible"
-      transition={{ duration: 1 }}
-      className="flex flex-col items-center"
-    >
-      <h1 className="text-8xl mb-2">
+    <div className="flex flex-col items-center">
+      <motion.h1
+        variants={viewVariants}
+        initial="initial"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-8xl mb-2"
+      >
         I'm{" "}
         <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-tl from-indigo-500 via-cyan-400 to-indigo-500 animate-sheen">
           Wilson.
         </span>
-      </h1>
-      <h2 className="text-center w-[80%]">
+      </motion.h1>
+      <motion.h2
+        variants={viewVariants}
+        initial="initial"
+        whileInView={{
+          y: 0,
+          x: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.6,
+          ease: "easeInOut",
+          delay: 0.3,
+        }}
+        viewport={{ once: true }}
+        className="text-center w-[80%]"
+      >
         I'm a Fullstack Engineer based in{" "}
         <span className="font-medium text-sky-500">San Francisco</span>.
-      </h2>
+      </motion.h2>
       <section className="relative flex items-start gap-x-8 my-10 ">
-        <p className="m-4 text-3xl tracking-wide leading-relaxed text-white font-thin">
+        <motion.p
+          variants={viewVariants}
+          initial="initialL"
+          whileInView={{
+            y: 0,
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+            delay: 0.7,
+          }}
+          viewport={{ once: true }}
+          className="m-4 text-3xl tracking-wide leading-relaxed text-white font-thin"
+        >
           I build pixel-perfect front end experiences and love finding things to
           reverse-engineer to tease my brain. When I'm not coding you can find
           me by the ocean with fishing rod in hand, or exploring Hyrule mainly
           for its puzzles. The princess can wait.
-        </p>
-        <div
+        </motion.p>
+        <motion.div
+          variants={viewVariants}
+          initial="initialR"
+          whileInView={{
+            y: 0,
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+            delay: 0.7,
+          }}
+          viewport={{ once: true }}
           className="saturate-0 overflow-hidden min-w-72 h-72 rounded-3xl bg-white/60 shadow-md border-white/30 border-4 bg-center bg-cover bg-no-repeat animate-resaturate"
           style={{ backgroundImage: `url(${PROFILE_IMAGE})` }}
         />
       </section>
-
       <div className="h-full flex flex-row items-end justify-between gap-x-8 overflow-hidden">
-        <section className="my-10">
+        <motion.section
+          variants={viewVariants}
+          initial="initial"
+          whileInView={{
+            y: 0,
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+            delay: 1.2,
+          }}
+          viewport={{ once: true }}
+          className="my-10"
+        >
           <h3 className="relative top-4 left-3 uppercase drop-shadow-md z-10">
             About me
           </h3>
@@ -58,9 +115,9 @@ export default function About() {
             }
             {` if you'd like to chat!`}
           </p>
-        </section>
+        </motion.section>
         <RandomFactBox />
       </div>
-    </motion.div>
+    </div>
   );
 }

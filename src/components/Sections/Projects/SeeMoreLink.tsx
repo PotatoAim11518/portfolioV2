@@ -3,6 +3,7 @@ import { GITHUB } from "../../../lib/constants";
 import { useState } from "react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { viewVariants } from "../../../lib/motion";
 
 const MotionArrowRight = motion.create(ArrowRightIcon);
 
@@ -25,9 +26,12 @@ export default function SeeMoreLink() {
 
   return (
     <motion.a
+      variants={viewVariants}
+      initial="initial"
+      whileInView="visible"
+      viewport={{ once: true }}
       href={GITHUB}
       target="blank"
-      initial={{ scale: 1 }}
       whileHover={{
         scale: 1.03,
         transition: { type: "spring" },
