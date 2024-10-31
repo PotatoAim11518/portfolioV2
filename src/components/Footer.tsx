@@ -1,10 +1,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import {
-  EXTERNAL_LINKS,
-  ExternalLink,
-  NAV_LINKS,
-  NavLink,
-} from "../lib/constants";
+import { EXTERNAL_LINKS, NAV_LINKS } from "../lib/constants";
+import { ExternalLink, NavLink } from "../lib/types";
 
 export default function Footer() {
   return (
