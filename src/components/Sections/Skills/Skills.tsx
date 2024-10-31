@@ -2,9 +2,9 @@ import { Icon } from "@iconify/react";
 import Heading from "../../Heading";
 import Subskills from "./Subskills";
 import { motion, useAnimate, stagger, useInView } from "framer-motion";
-import { LEARNING, OTHER_SKILLS, SKILLS } from "../../../lib/constants";
 import { viewVariants } from "../../../lib/motion";
 import { useEffect } from "react";
+import { LEARNING, OTHER_SKILLS, SKILLS } from "../../../data/skills";
 
 export default function Skills() {
   const [scope, animate] = useAnimate();
@@ -51,7 +51,7 @@ export default function Skills() {
           </motion.div>
           <motion.aside
             variants={viewVariants}
-            initial="initial"
+            initial="initialR"
             whileInView="visible"
             viewport={{ once: true }}
             className="w-[40%] textbox whitespace-pre-line"

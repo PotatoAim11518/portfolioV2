@@ -4,6 +4,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { EXTERNAL_LINKS, NAV_LINKS } from "../lib/constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { HomeIcon } from "@radix-ui/react-icons";
+import { viewVariants } from "../lib/motion";
 
 export default function Header() {
   const [path, setPath] = useState("");
@@ -26,7 +27,11 @@ export default function Header() {
   }, [path]);
 
   return (
-    <header
+    <motion.header
+      variants={viewVariants}
+      initial="initialT"
+      whileInView="visible"
+      viewport={{ once: true }}
       className={clsx(
         "fixed flex items-center justify-center top-6 z-20 rounded-full backdrop-blur-sm",
         {}
@@ -83,6 +88,6 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }

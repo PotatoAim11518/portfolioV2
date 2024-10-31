@@ -1,4 +1,4 @@
-import { PROJECTS } from "../../../lib/constants";
+import { PROJECTS } from "../../../data/projects";
 import Heading from "../../Heading";
 import Project from "./Project";
 import SeeMoreLink from "./SeeMoreLink";

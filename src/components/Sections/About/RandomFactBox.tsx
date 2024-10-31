@@ -1,8 +1,8 @@
 // import { motion, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion";
-import { FACTS } from "../../../lib/constants";
 import clsx from "clsx";
 import { viewVariants } from "../../../lib/motion";
+import { FACTS } from "../../../data/facts";
 
 const factBoxVariants = {
   initial: { y: 0 },

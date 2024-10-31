@@ -33,13 +33,17 @@ export default function Project({ project }: ProjectProps) {
       <motion.a
         target="blank"
         href={href}
-        className="peer col-start-1 row-span-3 h-[320px] w-[500px] rounded-3xl opacity-40 border-transparent hover:border-2 bg-clip-border overflow-hidden animate-glow glow shadow-lg hover:shadow-xl"
+        className="flex items-center justify-center peer col-start-1 row-span-3 h-[320px] w-[500px] rounded-3xl opacity-40 border-transparent hover:border-2 bg-clip-border overflow-hidden animate-glow glow shadow-lg hover:shadow-xl"
         whileHover={{ scale: [null, 1.05, 1.04], opacity: [null, 50, 100] }}
         transition={{ duration: 0.3 }}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
-        <img src={image} className="object-cover"></img>
+        <img
+          src={image}
+          alt={name}
+          className="h-full m-auto object-cover"
+        ></img>
       </motion.a>
       <motion.aside
         layoutId="project-desc"

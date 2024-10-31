@@ -2,7 +2,7 @@ import { viewVariants } from "../../../lib/motion";
 import RandomFactBox from "./RandomFactBox";
 import { motion } from "framer-motion";
 
-const PROFILE_IMAGE = "src/assets/wilsonhuang.jpg";
+const PROFILE_IMAGE = "src/assets/wilson_huang.jpg";
 
 export default function About() {
   return (
