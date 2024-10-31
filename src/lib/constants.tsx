@@ -1,7 +1,7 @@
 export const GITHUB = "https://github.com/PotatoAim11518";
 export const LINKEDIN = "https://www.linkedin.com/in/wilson-huang-39198039/";
 
-export const MAX_CHARACTER_COUNT = 1000;
+export const MAX_CHARACTER_COUNT = 500;
 
 export type NavLink = {
   name: string;

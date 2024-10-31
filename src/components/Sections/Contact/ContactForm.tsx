@@ -3,8 +3,22 @@ import { InputHTMLAttributes, useRef, useState } from "react";
 import { MAX_CHARACTER_COUNT } from "../../../lib/constants";
 import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 type Status = "waiting" | "sending" | "success" | "error" | "bot";
+
+const shakeVariants = {
+  initial: {
+    x: [0],
+  },
+  shake: {
+    x: [0, 50, 0, -50, 0, 50, 0],
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
 
 export default function ContactForm() {
   const [message, setMessage] = useState("");
@@ -25,6 +39,7 @@ export default function ContactForm() {
     } else {
       setMessage(message);
     }
+    console.log(message);
   };
 
   const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -82,15 +97,22 @@ export default function ContactForm() {
           >
             Message
           </label>
-          <textarea
+          <motion.textarea
+            variants={shakeVariants}
+            animate={
+              characterCount === MAX_CHARACTER_COUNT ? "shake" : "initial"
+            }
             value={message}
             onChange={handleChange}
             name="message"
             id="message"
             required
-            className="px-4 py-4 min-h-72 max-h-72 w-full placeholder:text-indigo-200 placeholder:italic text-white ring-sky-500 focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition"
+            className={clsx(
+              "px-4 py-4 min-h-72 max-h-72 w-full text-white ring-sky-500 focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition",
+              { "ring-red-900": characterCount >= MAX_CHARACTER_COUNT }
+            )}
           />
-          <div className="flex justify-between tracking-wider italic font-semibold transition pl-2">
+          <div className="flex justify-between tracking-wider italic transition pl-2">
             {
               {
                 waiting: <p></p>,
@@ -109,8 +131,9 @@ export default function ContactForm() {
               }[status]
             }
             <p
-              className={clsx("relative text-white text-right", {
+              className={clsx("relative text-right", {
                 "text-red-600": characterCount >= MAX_CHARACTER_COUNT,
+                "text-white": characterCount < MAX_CHARACTER_COUNT,
               })}
             >
               <span className="font-semibold">{characterCount}</span>/
