@@ -38,7 +38,7 @@ export default function SeeMoreLink() {
       }}
       onHoverStart={() => setOscillate(true)}
       onHoverEnd={() => setOscillate(false)}
-      className="flex items-center gap-x-2 px-4 py-2 tooltip my-14"
+      className="flex items-center gap-x-2 lg:text-xl px-6 py-3 lg:px-5 lg:py-2 tooltip my-14"
     >
       <p>See more on</p>
       <Icon icon="cib:github" />
