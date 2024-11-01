@@ -3,8 +3,6 @@ import RandomFactBox from "./RandomFactBox";
 import { motion } from "framer-motion";
 import wilsonHuang from "../../../assets/wilson_huang.jpg";
 
-const PROFILE_IMAGE = "src/assets/wilson_huang.jpg";
-
 export default function About() {
   return (
     <div className="flex flex-col items-center">
