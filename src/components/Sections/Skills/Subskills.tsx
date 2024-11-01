@@ -20,7 +20,7 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
       className="flex flex-col items-center w-full"
     >
       <h2 className="font-thin leading-snug">{children}</h2>
-      <ul className="flex flex-wrap justify-center gap-x-6 gap-y-4">
+      <ul className="flex flex-col lg:flex-row flex-wrap justify-center gap-x-6 gap-y-6 lg:gap-y-4">
         {skillList.map((skill) => (
           <motion.a
             key={skill.name}

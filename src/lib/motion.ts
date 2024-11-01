@@ -7,12 +7,12 @@ export const viewVariants = {
     y: -10,
     opacity: 0,
   },
-  initialR: {
-    x: 10,
+  initialL: {
+    x: "-1.5rem",
     opacity: 0,
   },
-  initialL: {
-    x: -10,
+  initialR: {
+    x: "1.5rem",
     opacity: 0,
   },
   visible: {

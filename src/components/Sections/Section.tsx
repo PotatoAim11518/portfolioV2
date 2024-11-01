@@ -7,7 +7,7 @@ export default function Section({ children, id }: SectionProps) {
   return (
     <section
       id={id}
-      className="w-full max-w-[1400px] min-h-[900px] px-36 pt-36"
+      className="w-screen lg:max-w-screen-xl min-h-[900px] mt-8 px-8 py-16"
     >
       {children}
     </section>

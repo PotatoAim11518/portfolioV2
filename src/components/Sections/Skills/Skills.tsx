@@ -26,7 +26,7 @@ export default function Skills() {
     <div className="flex flex-col justify-center items-center">
       <Heading>Skills</Heading>
       <div className="flex flex-col flex-between gap-20 mb-16">
-        <section className="flex justify-around items-stretch gap-x-8 mt-10">
+        <section className="flex justify-around flex-col lg:flex-row items-stretch gap-x-8 mt-10">
           <motion.div
             ref={scope}
             className="grid grid-cols-3 xl:grid-cols-5 gap-8"
@@ -54,7 +54,7 @@ export default function Skills() {
             initial="initialR"
             whileInView="visible"
             viewport={{ once: true }}
-            className="w-[40%] textbox whitespace-pre-line"
+            className="w-fit lg:w-[40%] textbox text-center text-justify whitespace-pre-line"
           >
             {`I'm experienced in fullstack development, multiple state management systems, and plenty of third-party libraries. In my free time, I hope to pick up another language or two and build something out of my comfort zone.
           \nI'm always open to something new, of course--learning is a life-long skill!`}
