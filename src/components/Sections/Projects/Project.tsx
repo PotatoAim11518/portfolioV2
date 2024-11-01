@@ -14,12 +14,13 @@ type ProjectProps = {
   };
 };
 
+const variants = {
+  start: { top: "0rem", left: "0rem" },
+  end: { top: "6rem", left: "10rem" },
+};
+
 export default function Project({ project }: ProjectProps) {
   const { name, image, github, href, description, tags } = project;
-  const variants = {
-    start: { top: "0rem", left: "0rem" },
-    end: { top: "8rem", left: "10rem" },
-  };
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -54,7 +55,7 @@ export default function Project({ project }: ProjectProps) {
         variants={variants}
         initial="start"
         animate={isHovered ? "end" : "start"}
-        className="relative pointer-events-none place-content-center col-start-3 row-start-2 col-span-5 z-9"
+        className="relative pointer-events-none place-content-center col-start-3 row-start-3 col-span-5 z-9"
       >
         <div className="relative flex flex-col justify-start items-start">
           <h3 className="absolute right-4 -top-5 drop-shadow-md z-10">

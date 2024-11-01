@@ -71,7 +71,7 @@ export default function ContactForm() {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="grid grid-rows-2 gap-x-8 mt-10"
+      className="grid grid-rows-auto gap-x-8 mt-10 mb-20"
     >
       <fieldset className="flex gap-x-8">
         <div className="flex flex-col gap-y-8">

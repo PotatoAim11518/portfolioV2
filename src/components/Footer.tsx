@@ -16,17 +16,20 @@ export default function Footer() {
         border-t
         border-t-gray-600
         p-10
-        shadow-md"
+        shadow-md
+      "
     >
       <small className="h-full col-start-2 col-span-2 text-center items-center pt-2 border-r-white/30 border-r">
         &copy; Wilson Huang 2024
       </small>
-      <FooterNav heading="Here" links={NAV_LINKS} classes="col-start-4" />
-      <FooterNav
-        heading="Elsewhere"
-        links={EXTERNAL_LINKS}
-        classes="col-start-5"
-      />
+      <div className="flex gap-x-4 justify-around col-start-4 col-span-2">
+        <FooterNav heading="Here" links={NAV_LINKS} />
+        <FooterNav
+          heading="Elsewhere"
+          links={EXTERNAL_LINKS}
+          classes="col-start-6 col-span-2"
+        />
+      </div>
       <small className="col-start-8 col-span-2 pt-2">
         Coded in Visual Studio Code by me. Built with React/Vite. Styled with
         Tailwind CSS, deployed with Vercel.
@@ -38,7 +41,7 @@ export default function Footer() {
 type FooterNavProps = {
   heading: string;
   links: NavLink[] | ExternalLink[];
-  classes: string;
+  classes?: string;
 };
 
 function FooterNav({ heading, links, classes }: FooterNavProps) {
