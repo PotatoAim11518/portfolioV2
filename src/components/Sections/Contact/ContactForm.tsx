@@ -108,8 +108,11 @@ export default function ContactForm() {
             id="message"
             required
             className={clsx(
-              "px-4 py-4 min-h-72 max-h-72 w-full text-white ring-sky-500 focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition",
-              { "ring-red-900": characterCount >= MAX_CHARACTER_COUNT }
+              "px-4 py-4 min-h-72 max-h-72 w-full text-white focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition",
+              {
+                "ring-red-900": characterCount >= MAX_CHARACTER_COUNT,
+                "ring-sky-500": characterCount < MAX_CHARACTER_COUNT,
+              }
             )}
           />
           <div className="flex justify-between tracking-wider italic transition pl-2">

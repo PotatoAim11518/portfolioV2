@@ -107,9 +107,12 @@ export default function About() {
             \nUnfortunately, in 2023 our entire team was dissolved as a result of layoffs. Since then, I've pursued a few personal projects, travelled, and skilled up my technical chops. For my next role, I'm looking for a place where we can use software to better people's lives in a meaningful way. `}
             {
               <span>
-                <a href="/#contact" className="font-semibold text-sky-500">
+                <button
+                  onClick={() => (window.location.hash = "#contact")}
+                  className="font-semibold text-sky-500"
+                >
                   Contact me
-                </a>
+                </button>
               </span>
             }
             {` if you'd like to chat!`}
