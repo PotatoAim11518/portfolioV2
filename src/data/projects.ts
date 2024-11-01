@@ -1,9 +1,12 @@
 import { Project } from "../lib/types";
+import personalPortfolio from "../assets/personal_portfolio.png";
+import halfMoonBay from "../assets/half_moon_bay.jpg";
+import terry from "../assets/terry.webp";
 
 export const PROJECTS: Project[] = [
   {
     name: "This Portfolio",
-    image: "src/assets/personal_portfolio.png",
+    image: personalPortfolio,
     github: "https://github.com/PotatoAim11518/portfolioV2",
     href: "/",
     description:
@@ -12,7 +15,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Project Name B",
-    image: "src/assets/half_moon_bay.jpg",
+    image: halfMoonBay,
     github: "https://github.com/PotatoAim11518",
     href: "/",
     description:
@@ -21,7 +24,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Project Name C",
-    image: "src/assets/terry.webp",
+    image: terry,
     github: "https://github.com/PotatoAim11518",
     href: "/",
     description:

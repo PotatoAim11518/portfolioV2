@@ -1,6 +1,7 @@
 import { viewVariants } from "../../../lib/motion";
 import RandomFactBox from "./RandomFactBox";
 import { motion } from "framer-motion";
+import wilsonHuang from "../../../assets/wilson_huang.jpg";
 
 const PROFILE_IMAGE = "src/assets/wilson_huang.jpg";
 
@@ -75,7 +76,7 @@ export default function About() {
           }}
           viewport={{ once: true }}
           className="saturate-0 overflow-hidden min-w-72 h-72 rounded-3xl bg-white/60 shadow-md border-white/30 border-4 bg-center bg-cover bg-no-repeat animate-resaturate"
-          style={{ backgroundImage: `url(${PROFILE_IMAGE})` }}
+          style={{ backgroundImage: `url(${wilsonHuang})` }}
         />
       </section>
       <div className="h-full flex flex-row items-end justify-between gap-x-8 overflow-hidden">
