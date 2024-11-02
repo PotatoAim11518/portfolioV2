@@ -9,6 +9,7 @@ export default {
         glow: "sheen 3s linear infinite",
         tooltip: "tooltip 0.3s forwards",
         resaturate: "saturate 0.6s 1s forwards",
+        swipe: "swipe 1.6s infinite;",
       },
       keyframes: {
         city: {
@@ -45,6 +46,21 @@ export default {
           },
           "100%": {
             filter: "saturate(1)",
+          },
+        },
+        swipe: {
+          "0%": {
+            transform: "none",
+            opacity: 0,
+            "animation-timing-function": "cubic-bezier(0, 0.3, 0.6, 1)",
+          },
+          "30%": {
+            transform: "translateY(-70%)",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "translateY(-100%)",
+            opacity: 0,
           },
         },
       },

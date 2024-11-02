@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { viewVariants } from "../../../lib/motion";
 import { FACTS } from "../../../data/facts";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { useState } from "react";
 
 const factBoxVariants = {
   initial: { y: 0 },
@@ -10,8 +12,10 @@ const factBoxVariants = {
 };
 
 export default function RandomFactBox() {
+  const [showSwipe, setShowSwipe] = useState(true);
   return (
     <motion.div
+      onTapStart={() => setShowSwipe(false)}
       variants={viewVariants}
       initial="initial"
       whileInView={{
@@ -24,8 +28,18 @@ export default function RandomFactBox() {
         ease: "easeInOut",
         delay: 1.2,
       }}
-      className="relative h-full w-auto mx-11"
+      className="relative h-full w-auto mx-16"
     >
+      <div
+        className={clsx(
+          "absolute text-slate-200 h-20 left-1/2 top-1/3 z-40 animate-swipe",
+          {
+            hidden: !showSwipe,
+          }
+        )}
+      >
+        <Icon icon="ic:baseline-swipe-up" height={40} width={40} />
+      </div>
       <div
         aria-label="t-upper-panel"
         className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] bottom-[220px]"
