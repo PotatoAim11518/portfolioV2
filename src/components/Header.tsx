@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { EXTERNAL_LINKS, NAV_LINKS } from "../lib/constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { HomeIcon } from "@radix-ui/react-icons";
 import { viewVariants } from "../lib/motion";
 
 export default function Header() {
@@ -28,26 +27,27 @@ export default function Header() {
 
   return (
     <motion.header
+      layoutId="header"
       variants={viewVariants}
       initial="initialT"
       whileInView="visible"
       viewport={{ once: true }}
-      className={clsx(
-        "fixed flex items-center justify-center top-6 z-20 rounded-full backdrop-blur-sm",
-        {}
-      )}
+      className={clsx("w-full fixed flex top-6 z-30 transition-all", {
+        "justify-center items-center": scrollPos <= 200,
+        "justify-end items-center": scrollPos > 200,
+      })}
     >
-      <nav
-        className={clsx("px-4 py-2 rounded-full transition", {
-          "bg-gray-900/75 shadow-md": scrollPos > 200,
+      <motion.nav
+        className={clsx("px-4 py-2 rounded-l-full", {
+          "bg-gray-900/75 shadow-md backdrop-blur-sm": scrollPos > 200,
         })}
       >
-        <ul className="flex flex-row items-center gap-x-4 ">
+        <ul className="flex flex-row items-center gap-x-3 ">
           {NAV_LINKS.map((link) => (
             <li
               key={link.hash}
               className={clsx(
-                "relative text-white tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-exclusion",
+                "relative text-white tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-screen",
                 {
                   "text-slate-400": path !== link.hash,
                 }
@@ -59,7 +59,7 @@ export default function Header() {
               >
                 {link.name === "About" ? (
                   <span className="flex justify-center items-center gap-x-2">
-                    <HomeIcon />
+                    <Icon icon="mdi:home" />
                     {link.name}
                   </span>
                 ) : (
@@ -87,7 +87,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
-      </nav>
+      </motion.nav>
     </motion.header>
   );
 }

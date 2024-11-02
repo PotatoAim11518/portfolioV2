@@ -6,6 +6,7 @@ export default function Footer() {
   return (
     <footer
       className="
+        w-screen
         grid
         grid-cols-10
         gap-8
@@ -19,10 +20,10 @@ export default function Footer() {
         shadow-md
       "
     >
-      <small className="h-full col-start-2 col-span-2 text-center items-center pt-2 border-r-white/30 border-r">
+      <small className="h-full lg:col-start-2 col-span-3 lg:col-span-2 text-end lg:text-center text-xl lg:text-sm items-center pt-2 pr-4 border-r-white/30 border-r">
         &copy; Wilson Huang 2024
       </small>
-      <div className="flex gap-x-4 justify-around col-start-4 col-span-2">
+      <div className="hidden lg:flex gap-x-4 justify-around col-start-3 lg:col-start-4 col-span-2">
         <FooterNav heading="Here" links={NAV_LINKS} />
         <FooterNav
           heading="Elsewhere"
@@ -30,9 +31,9 @@ export default function Footer() {
           classes="col-start-6 col-span-2"
         />
       </div>
-      <small className="col-start-8 col-span-2 pt-2">
-        Coded in Visual Studio Code by me. Built with React/Vite. Styled with
-        Tailwind CSS, deployed with Vercel.
+      <small className="col-start-4 lg:col-start-6 col-span-full lg:col-span-4 text-justify pt-2 text-xl lg:text-sm">
+        Coded and designed from scratch in Visual Studio Code by me. Built with
+        React/Vite. Styled with Tailwind CSS.
       </small>
     </footer>
   );
@@ -47,12 +48,12 @@ type FooterNavProps = {
 function FooterNav({ heading, links, classes }: FooterNavProps) {
   return (
     <nav className={`${classes} my-2`}>
-      <h3 className="text-xl mb-4 tracking-wider">{heading}</h3>
+      <h3 className="text-4xl lg:text-xl mb-4 tracking-wider">{heading}</h3>
       <ul className="flex-col flex-start">
         {links.map((link) => (
           <li
             key={link.name}
-            className="text-slate-400 hover:text-white tracking-widest py-1 transition"
+            className="text-3xl lg:text-base text-slate-400 hover:text-white tracking-widest py-1 transition"
           >
             {"hash" in link && <a href={link.hash}>{link.name}</a>}
             {"href" in link && (

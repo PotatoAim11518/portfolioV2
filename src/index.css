@@ -24,7 +24,7 @@
 }
 
 .tooltip {
-  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-3xl lg:text-sm font-semibold tracking-wider px-6 py-3 rounded-full shadow-sm;
+  @apply bg-gradient-to-tl from-gray-700 to-gray-900 uppercase border-white/40 border-2 text-white text-2xl lg:text-sm font-semibold tracking-widest lg:tracking-wider px-6 py-3 rounded-full shadow-sm;
 }
 
 .tag {

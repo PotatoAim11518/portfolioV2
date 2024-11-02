@@ -7,7 +7,7 @@ export default {
         city: "city 2s forwards",
         sheen: "sheen 4s ease infinite",
         glow: "sheen 3s linear infinite",
-        tooltip: "tooltip 0.3s ",
+        tooltip: "tooltip 0.3s forwards",
         resaturate: "saturate 0.6s 1s forwards",
       },
       keyframes: {
@@ -31,11 +31,11 @@ export default {
         },
         tooltip: {
           "0%": {
-            transform: "translateY(20%)",
-            opacity: 0.2,
+            transform: "translateY(60%)",
+            opacity: 0,
           },
           "100%": {
-            transform: "translateY(0%)",
+            transform: "translateY(40%)",
             opacity: 1,
           },
         },

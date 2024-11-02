@@ -20,31 +20,33 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
       className="flex flex-col items-center w-full"
     >
       <h2 className="font-thin leading-snug">{children}</h2>
-      <ul className="flex flex-col lg:flex-row flex-wrap justify-center gap-x-6 gap-y-6 lg:gap-y-4">
+      <ul className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-y-4">
         {skillList.map((skill) => (
-          <motion.a
-            key={skill.name}
-            target="blank"
-            href={skill.link}
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.03,
-              transition: { type: "spring" },
-            }}
-            className={clsx(
-              "flex justify-center items-center px-5 py-2 gap-x-2 text-center tooltip",
-              {
-                "pointer-events-none": !skill.link,
-              }
-            )}
-          >
-            {skill.name}
-            {skill.icon && (
-              <span>
-                <Icon aria-label={skill.name} icon={skill.icon} />
-              </span>
-            )}
-          </motion.a>
+          <li key={skill.name}>
+            <motion.a
+              key={skill.name}
+              target="blank"
+              href={skill.link}
+              initial={{ scale: 1 }}
+              whileHover={{
+                scale: 1.03,
+                transition: { type: "spring" },
+              }}
+              className={clsx(
+                "flex justify-center items-center w-full px-5 py-2 gap-x-2 text-center tooltip",
+                {
+                  "pointer-events-none": !skill.link,
+                }
+              )}
+            >
+              {skill.name}
+              {skill.icon && (
+                <span>
+                  <Icon aria-label={skill.name} icon={skill.icon} />
+                </span>
+              )}
+            </motion.a>
+          </li>
         ))}
       </ul>
     </motion.section>

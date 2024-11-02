@@ -9,7 +9,7 @@ import Contact from "./Sections/Contact/Contact";
 
 function App() {
   return (
-    <main className="w-screen flex flex-col items-center overflow-hidden background">
+    <main className="flex flex-col items-center overflow-hidden background">
       <Header />
       <Section id="about">
         <About />

@@ -7,14 +7,11 @@ export const SKILLS: Skill[] = [
   { name: "React", icon: "skill-icons:react-dark" },
   { name: "NextJS", icon: "skill-icons:nextjs-dark" },
   { name: "Redux", icon: "skill-icons:redux" },
-  { name: "NodeJS", icon: "skill-icons:nodejs-dark" },
   { name: "HTML", icon: "skill-icons:html" },
   { name: "CSS", icon: "skill-icons:css" },
   { name: "TailwindCSS", icon: "skill-icons:tailwindcss-dark" },
-  { name: "Contentful", icon: "logos:contentful" },
+  { name: "NodeJS", icon: "skill-icons:nodejs-dark" },
   { name: "PostgreSQL", icon: "skill-icons:postgresql-dark" },
-  { name: "Heroku", icon: "skill-icons:heroku" },
-  { name: "Vercel", icon: "skill-icons:vercel-dark" },
   { name: "Docker", icon: "skill-icons:docker" },
 ];
 
@@ -25,9 +22,30 @@ export const OTHER_SKILLS: Skill[] = [
     link: "https://code.visualstudio.com/",
   },
   {
+    name: "Git",
+    icon: "devicon:git",
+    link: "https://git-scm.com/",
+  },
+  {
     name: "Vite",
     icon: "devicon:vite",
     link: "https://vite.dev/",
+  },
+  { name: "Figma", icon: "devicon:figma", link: "https://www.figma.com/" },
+  {
+    name: "Storybook",
+    icon: "logos:storybook-icon",
+    link: "https://storybook.js.org/",
+  },
+  {
+    name: "Heroku",
+    icon: "devicon:heroku",
+    link: "https://www.heroku.com/",
+  },
+  {
+    name: "Vercel",
+    icon: "devicon:vercel",
+    link: "https://vercel.com/",
   },
   {
     name: "Framer Motion",
@@ -40,22 +58,26 @@ export const OTHER_SKILLS: Skill[] = [
     link: "https://testing-library.com/docs/react-testing-library/intro/",
   },
   {
+    name: "Envoy",
+    icon: "devicon:envoy",
+    link: "https://www.envoyproxy.io/",
+  },
+  {
     name: "Styled Components",
     icon: "skill-icons:styledcomponents",
     link: "https://styled-components.com/",
-  },
-  {
-    name: "Storybook",
-    icon: "logos:storybook-icon",
-    link: "https://storybook.js.org/",
   },
   {
     name: "Zustand",
     icon: "",
     link: "https://zustand.docs.pmnd.rs/getting-started/introduction",
   },
-  { name: "Figma", icon: "devicon:figma", link: "https://www.figma.com/" },
   { name: "Socket.io", icon: "devicon:socketio", link: "https://socket.io/" },
+  {
+    name: "Contentful",
+    icon: "logos:contentful",
+    link: "https://www.contentful.com/",
+  },
   {
     name: "Live2D Cubism",
     icon: "",
