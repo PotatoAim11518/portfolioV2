@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { viewVariants } from "../../../lib/motion";
+import { useWindowSize } from "../../../lib/hooks";
 
 type ProjectProps = {
   project: {
@@ -22,6 +23,7 @@ const variants = {
 export default function Project({ project }: ProjectProps) {
   const { name, image, github, href, description, tags } = project;
   const [isHovered, setIsHovered] = useState(false);
+  const { width } = useWindowSize();
 
   return (
     <motion.section
@@ -29,7 +31,7 @@ export default function Project({ project }: ProjectProps) {
       initial="initial"
       whileInView="visible"
       viewport={{ once: true }}
-      className="flex flex-col justify-center items-center gap-y-6 lg:grid lg:grid-cols-8 lg:grid-rows-auto py-14"
+      className="flex flex-col justify-center items-center gap-y-10 lg:grid lg:grid-cols-8 lg:grid-rows-auto py-14"
     >
       <motion.a
         target="blank"
@@ -54,7 +56,7 @@ export default function Project({ project }: ProjectProps) {
         }}
         variants={variants}
         initial="start"
-        animate={isHovered ? "end" : "start"}
+        animate={isHovered && width > 1024 ? "end" : "start"}
         className="relative pointer-events-none place-content-center w-[80%] lg:w-full lg:col-start-3 lg:row-start-3 lg:col-span-5 z-10"
       >
         <div className="relative flex flex-col justify-start items-start">
