@@ -29,12 +29,12 @@ export default function Project({ project }: ProjectProps) {
       initial="initial"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid grid-cols-8 grid-rows-auto py-14"
+      className="flex flex-col justify-center items-center gap-y-6 lg:grid lg:grid-cols-8 lg:grid-rows-auto py-14"
     >
       <motion.a
         target="blank"
         href={href}
-        className="flex items-center justify-center peer col-start-1 row-span-3 h-[320px] w-[500px] rounded-3xl opacity-40 border-transparent hover:border-2 bg-clip-border overflow-hidden animate-glow glow shadow-lg hover:shadow-xl"
+        className="flex items-center justify-center peer col-start-1 row-span-3 w-[80%] h-[425px] lg:h-[320px] lg:w-[500px] rounded-3xl lg:opacity-40 border-transparent border-2 lg:border-0 lg:hover:border-2 bg-clip-border overflow-hidden animate-glow glow shadow-lg hover:shadow-xl"
         whileHover={{ scale: [null, 1.05, 1.04], opacity: [null, 50, 100] }}
         transition={{ duration: 0.3 }}
         onHoverStart={() => setIsHovered(true)}
@@ -55,10 +55,10 @@ export default function Project({ project }: ProjectProps) {
         variants={variants}
         initial="start"
         animate={isHovered ? "end" : "start"}
-        className="relative pointer-events-none place-content-center col-start-3 row-start-3 col-span-5 z-9"
+        className="relative pointer-events-none place-content-center w-[80%] lg:w-full lg:col-start-3 lg:row-start-3 lg:col-span-5 z-10"
       >
         <div className="relative flex flex-col justify-start items-start">
-          <h3 className="absolute right-4 -top-5 drop-shadow-md z-10">
+          <h3 className="absolute right-4 -top-5 drop-shadow-md z-20">
             {name}
           </h3>
           <p className="relative text-xl leading-relaxed tracking-wide text-white font-thin bg-gray-900 bg-gradient-to-tl from-gray-900 to-white/10 rounded-md px-6 py-4 shadow-md">

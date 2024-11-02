@@ -26,7 +26,7 @@ export default function RandomFactBox() {
       transition={{
         duration: 0.6,
         ease: "easeInOut",
-        delay: 1.2,
+        delay: 0.3,
       }}
       style={{ scale: "130%" }}
       className="relative h-full w-auto my-20 lg:mx-20"
