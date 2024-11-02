@@ -32,7 +32,7 @@ export default function Header() {
       initial="initialT"
       whileInView="visible"
       viewport={{ once: true }}
-      className={clsx("lg:w-full fixed flex lg:right-0 top-6 z-30 transition", {
+      className={clsx("lg:w-full fixed flex lg:right-0 top-6 z-30", {
         "justify-center items-center": scrollPos <= 200,
         "justify-end items-center right-6": scrollPos > 200,
       })}
@@ -61,13 +61,15 @@ export default function Header() {
                 {
                   "text-slate-400": path !== link.hash,
                   "text-white": path === link.hash,
+                  "text-4xl": scrollPos <= 200,
+                  "text-xl": scrollPos > 200,
                 }
               )}
             >
               <button
                 onClick={() => handleNav(link.hash)}
-                className={clsx("lg:visible lg:flex text-4xl lg:text-3xl", {
-                  "hidden lg:text-xl": scrollPos > 200,
+                className={clsx("lg:visible lg:flex", {
+                  "hidden text-xl": scrollPos > 200,
                 })}
               >
                 {link.name === "About" ? (
@@ -76,7 +78,7 @@ export default function Header() {
                     {link.name}
                   </span>
                 ) : (
-                  link.name
+                  <span>{link.name}</span>
                 )}
               </button>
               <button
@@ -91,7 +93,6 @@ export default function Header() {
               {path === link.hash && (
                 <motion.div
                   layoutId="active-pill"
-                  initial={{}}
                   className={clsx(
                     "absolute inset-0 lg:left-0 lg:h-auto lg:w-full shadow-md mix-blend-color-dodge sheen animate-sheen",
                     {
