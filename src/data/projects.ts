@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
   {
     name: "This Portfolio",
     image: personalPortfolio,
-    github: "https://github.com/PotatoAim11518/portfolioV2",
+    github: "https://potatoaim11518.github.io/portfolioV2/",
     href: "/",
     description:
       "This is the most recent version of my personal portfolio site. It makes heavy use of Framer Motion and TailwindCSS for some interesting animations and interactions. I'm not a designer, but I think it turned out pretty well.",
