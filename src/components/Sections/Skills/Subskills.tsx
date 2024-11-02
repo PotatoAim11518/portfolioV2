@@ -33,7 +33,7 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
                 transition: { type: "spring" },
               }}
               className={clsx(
-                "flex justify-center items-center w-full px-5 py-2 gap-x-2 text-center tooltip",
+                "flex justify-center items-center w-full text-center tooltip",
                 {
                   "pointer-events-none": !skill.link,
                 }

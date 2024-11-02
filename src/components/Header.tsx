@@ -32,30 +32,43 @@ export default function Header() {
       initial="initialT"
       whileInView="visible"
       viewport={{ once: true }}
-      className={clsx("w-full fixed flex top-6 z-30 transition-all", {
+      className={clsx("lg:w-full fixed flex lg:right-0 top-6 z-30 transition", {
         "justify-center items-center": scrollPos <= 200,
-        "justify-end items-center": scrollPos > 200,
+        "justify-end items-center right-6": scrollPos > 200,
       })}
     >
       <motion.nav
-        className={clsx("px-4 py-2 rounded-l-full", {
-          "bg-gray-900/75 shadow-md backdrop-blur-sm": scrollPos > 200,
+        layoutId="nav"
+        variants={viewVariants}
+        initial="initialT"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className={clsx("py-4 lg:px-4 lg:py-2 rounded-full lg:rounded-e-none", {
+          "bg-gray-900/75 shadow-md backdrop-blur-sm ": scrollPos > 200,
         })}
       >
-        <ul className="flex flex-row items-center gap-x-3 ">
+        <ul
+          className={clsx("flex items-center gap-3", {
+            "flex-row ": scrollPos <= 200,
+            "flex-col lg:flex-row": scrollPos > 200,
+          })}
+        >
           {NAV_LINKS.map((link) => (
             <li
               key={link.hash}
               className={clsx(
-                "relative text-white tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-screen",
+                "relative tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-screen",
                 {
                   "text-slate-400": path !== link.hash,
+                  "text-white": path === link.hash,
                 }
               )}
             >
               <button
                 onClick={() => handleNav(link.hash)}
-                className="flex text-xl "
+                className={clsx("lg:visible lg:flex text-4xl lg:text-3xl", {
+                  "hidden lg:text-xl": scrollPos > 200,
+                })}
               >
                 {link.name === "About" ? (
                   <span className="flex justify-center items-center gap-x-2">
@@ -66,10 +79,25 @@ export default function Header() {
                   link.name
                 )}
               </button>
+              <button
+                onClick={() => handleNav(link.hash)}
+                className={clsx("lg:hidden text-slate-400 text-xl", {
+                  hidden: scrollPos <= 200,
+                  block: scrollPos > 200,
+                })}
+              >
+                <Icon icon={link.icon} height={60} width={60} />
+              </button>
               {path === link.hash && (
                 <motion.div
                   layoutId="active-pill"
-                  className="absolute inset-0 h-auto w-full shadow-md mix-blend-color-dodge sheen animate-sheen"
+                  initial={{}}
+                  className={clsx(
+                    "absolute inset-0 lg:left-0 lg:h-auto lg:w-full shadow-md mix-blend-color-dodge sheen animate-sheen",
+                    {
+                      "w-20 h-20 left-[14px]": scrollPos > 200,
+                    }
+                  )}
                   style={{ borderRadius: 9999 }}
                   transition={{ type: "spring", duration: 0.6 }}
                 ></motion.div>
@@ -82,7 +110,7 @@ export default function Header() {
               className="text-slate-400 hover:text-white p-2 transition mix-blend-difference"
             >
               <a className="" href={link.href} target="blank">
-                <Icon icon={link.icon} height={28} width={28} />
+                <Icon icon={link.icon} height={40} width={40} />
               </a>
             </li>
           ))}

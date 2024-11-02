@@ -11,7 +11,7 @@ export default function About() {
         initial="initial"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-8xl mt-32 mb-2"
+        className="text-7xl lg:text-8xl mt-32 mb-2"
       >
         I'm{" "}
         <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-tl from-indigo-500 via-cyan-400 to-indigo-500 animate-sheen">
@@ -52,7 +52,7 @@ export default function About() {
             delay: 1,
           }}
           viewport={{ once: true }}
-          className="my-4 p-8 text-4xl lg:text-3xl text-justify tracking-wider leading-relaxed lg:leading-loose lg:text-left text-white font-thin"
+          className="my-4 p-8 text-3xl text-justify tracking-wider leading-relaxed lg:leading-loose lg:text-left text-white font-thin"
         >
           I build pixel-perfect front end experiences and love finding things to
           reverse-engineer to tease my brain. When I'm not coding you can find
@@ -96,7 +96,7 @@ export default function About() {
         >
           <motion.h3
             layoutId="about-me"
-            className="relative -top-4 lg:top-4 lg:left-3 text-center lg:text-left text-6xl lg:text-3xl uppercase drop-shadow-md z-10"
+            className="relative -top-4 lg:top-4 lg:left-3 text-center lg:text-left text-5xl lg:text-3xl uppercase drop-shadow-md z-10"
           >
             About me
           </motion.h3>

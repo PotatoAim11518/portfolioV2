@@ -9,18 +9,22 @@ export const NAV_LINKS: NavLink[] = [
   {
     name: "About",
     hash: "#about",
+    icon: "mdi:home",
   },
   {
     name: "Skills",
     hash: "#skills",
+    icon: "material-symbols:cognition",
   },
   {
     name: "Projects",
     hash: "#projects",
+    icon: "fluent:window-wrench-24-filled",
   },
   {
     name: "Contact",
     hash: "#contact",
+    icon: "mdi:mail",
   },
 ];
 

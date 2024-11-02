@@ -14,7 +14,7 @@ export default function Contact() {
         viewport={{ once: true }}
         className="my-6"
       >
-        <p className="w-full text-justify lg:text-center px-8 text-5xl lg:text-2xl leading-relaxed tracking-wide text-white font-thin">
+        <p className="w-full text-justify lg:text-center px-8 text-3xl lg:text-2xl leading-relaxed tracking-wide text-white font-thin">
           If you feel like I'd be a good fit for your team, let's chat! Feel
           free to reach out to me via LinkedIn or send me an email.
         </p>

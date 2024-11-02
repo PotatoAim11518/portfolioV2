@@ -53,6 +53,11 @@ export const OTHER_SKILLS: Skill[] = [
     link: "https://www.framer.com/motion/",
   },
   {
+    name: "Styled Components",
+    icon: "skill-icons:styledcomponents",
+    link: "https://styled-components.com/",
+  },
+  {
     name: "React Testing Library",
     icon: "logos:testing-library",
     link: "https://testing-library.com/docs/react-testing-library/intro/",
@@ -61,11 +66,6 @@ export const OTHER_SKILLS: Skill[] = [
     name: "Envoy",
     icon: "devicon:envoy",
     link: "https://www.envoyproxy.io/",
-  },
-  {
-    name: "Styled Components",
-    icon: "skill-icons:styledcomponents",
-    link: "https://styled-components.com/",
   },
   {
     name: "Zustand",
