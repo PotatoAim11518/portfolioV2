@@ -28,7 +28,8 @@ export default function RandomFactBox() {
         ease: "easeInOut",
         delay: 1.2,
       }}
-      className="relative h-full w-auto mx-16"
+      style={{ scale: "130%" }}
+      className="relative h-full w-auto my-20 lg:mx-20"
     >
       <div
         className={clsx(
