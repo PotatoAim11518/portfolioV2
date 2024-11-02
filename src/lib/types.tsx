@@ -1,6 +1,7 @@
 export type NavLink = {
   name: string;
   hash: string;
+  icon: string;
 };
 
 export type ExternalLink = {
