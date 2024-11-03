@@ -57,7 +57,7 @@ export default function RandomFactBox() {
                 <motion.li
                   key={i}
                   className={clsx(
-                    "text-center text-sm place-content-center tracking-tight p-2 -top-24 left-20 h-36 w-28 shadow-md bg-stone-300"
+                    "text-center text-xs place-content-center tracking-tight font-mono p-2 -top-24 left-20 h-36 w-28 shadow-md bg-stone-300"
                   )}
                   style={{
                     mask: "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/11px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/11px 51% repeat-x",
