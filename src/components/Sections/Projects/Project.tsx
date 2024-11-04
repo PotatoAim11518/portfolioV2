@@ -49,7 +49,7 @@ export default function Project({ project }: ProjectProps) {
         ></img>
       </motion.a>
       <motion.aside
-        layoutId="project-desc"
+        layoutId={"project-desc-" + name}
         transition={{
           type: "spring",
           bounce: 0.2,
