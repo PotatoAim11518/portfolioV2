@@ -56,7 +56,7 @@ export default function Project({ project }: ProjectProps) {
         }}
         variants={variants}
         initial="start"
-        animate={isHovered && width > 1024 ? "end" : "start"}
+        animate={isHovered && !!width && width > 1024 ? "end" : "start"}
         className="relative pointer-events-none place-content-center w-[80%] lg:w-full lg:col-start-3 lg:row-start-3 lg:col-span-5 z-10"
       >
         <div className="relative flex flex-col justify-start items-start">
