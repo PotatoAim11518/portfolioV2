@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { SCROLL_THRESHOLD } from "../../lib/constants";
+import { SCROLL_THRESHOLD } from "../../data/constants";
 
 type NavPillProps = {
   scrollPos: number;

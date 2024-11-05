@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { NavLink } from "../../lib/types";
-import { SCROLL_THRESHOLD } from "../../lib/constants";
+import { SCROLL_THRESHOLD } from "../../data/constants";
 import React from "react";
 
 type NavLinkItemProps = {

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { InputHTMLAttributes, useRef, useState } from "react";
-import { MAX_CHARACTER_COUNT } from "../../../lib/constants";
+import { MAX_CHARACTER_COUNT } from "../../../data/constants";
 import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";

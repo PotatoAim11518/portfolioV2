@@ -1,4 +1,4 @@
-import { ExternalLink, NavLink } from "./types";
+import { ExternalLink, NavLink } from "../lib/types";
 
 export const GITHUB = "https://github.com/PotatoAim11518";
 export const LINKEDIN = "https://www.linkedin.com/in/wilson-huang-39198039/";

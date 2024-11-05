@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { viewVariants } from "../../../lib/motion";
-import { FACTS } from "../../../data/facts";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
+import { FACTS } from "../../../data/about";
 
 const factBoxVariants = {
   initial: { y: 0 },

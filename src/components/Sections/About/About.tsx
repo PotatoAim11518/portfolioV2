@@ -2,6 +2,7 @@ import { viewVariants } from "../../../lib/motion";
 import RandomFactBox from "./RandomFactBox";
 import { motion } from "framer-motion";
 import wilsonHuang from "../../../assets/wilson_huang.jpg";
+import { INTRODUCTION } from "../../../data/about";
 
 export default function About() {
   return (
@@ -54,10 +55,7 @@ export default function About() {
           viewport={{ once: true }}
           className="my-4 p-8 text-3xl text-justify tracking-wider leading-relaxed lg:leading-loose lg:text-left text-white font-thin"
         >
-          I build pixel-perfect front end experiences and love finding things to
-          reverse-engineer to tease my brain. When I'm not coding you can find
-          me by the ocean with fishing rod in hand, or exploring Hyrule mainly
-          for its puzzles. The princess can wait.
+          {INTRODUCTION}
         </motion.p>
         <motion.div
           variants={viewVariants}

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { EXTERNAL_LINKS, NAV_LINKS, SCROLL_THRESHOLD } from "../lib/constants";
+import { EXTERNAL_LINKS, NAV_LINKS, SCROLL_THRESHOLD } from "../data/constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { viewVariants } from "../lib/motion";
 import { usePathChange } from "../lib/hooks";

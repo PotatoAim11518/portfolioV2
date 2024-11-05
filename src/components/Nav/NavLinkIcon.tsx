@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { SCROLL_THRESHOLD } from "../../lib/constants";
+import { SCROLL_THRESHOLD } from "../../data/constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { NavLink } from "../../lib/types";
 

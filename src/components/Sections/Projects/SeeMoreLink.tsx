@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GITHUB } from "../../../lib/constants";
+import { GITHUB } from "../../../data/constants";
 import { useState } from "react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Icon } from "@iconify/react/dist/iconify.js";
