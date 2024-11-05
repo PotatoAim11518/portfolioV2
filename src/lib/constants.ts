@@ -3,6 +3,10 @@ import { ExternalLink, NavLink } from "./types";
 export const GITHUB = "https://github.com/PotatoAim11518";
 export const LINKEDIN = "https://www.linkedin.com/in/wilson-huang-39198039/";
 
+// Nav bar transition scroll threshold
+export const SCROLL_THRESHOLD = 200;
+
+// Character limit for email contact message
 export const MAX_CHARACTER_COUNT = 500;
 
 export const NAV_LINKS: NavLink[] = [

@@ -63,7 +63,7 @@ export default function Project({ project }: ProjectProps) {
           <h3 className="absolute right-4 -top-5 drop-shadow-md z-20">
             {name}
           </h3>
-          <p className="relative text-xl leading-relaxed tracking-wide text-white font-thin bg-gray-900 bg-gradient-to-tl from-gray-900 to-white/10 rounded-md px-6 py-4 shadow-md">
+          <p className="relative w-full text-xl leading-relaxed tracking-wide text-white font-thin bg-gray-900 bg-gradient-to-tl from-gray-900 to-white/10 rounded-md px-6 py-4 shadow-md">
             {description}
             <a href={github} target="blank">
               <Icon
