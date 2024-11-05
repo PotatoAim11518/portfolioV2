@@ -5,7 +5,11 @@ import { EXTERNAL_LINKS, NAV_LINKS } from "../lib/constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { viewVariants } from "../lib/motion";
 
-export default function Header() {
+type HeaderProps = {
+  visibleSectionId: string | null;
+};
+
+export default function Header({ visibleSectionId }: HeaderProps) {
   const [path, setPath] = useState("");
   const [scrollPos, setScrollPos] = useState(0);
   const { scrollY } = useScroll();
@@ -20,10 +24,14 @@ export default function Header() {
       const path = window.location.hash;
       setPath(path);
     };
-    window.addEventListener("hashchange", handlePathChange);
     handlePathChange();
+    window.addEventListener("hashchange", handlePathChange);
     return () => window.removeEventListener("hashchange", handlePathChange);
   }, [path]);
+
+  useEffect(() => {
+    history.pushState(null, "", `#${visibleSectionId}`);
+  }, [visibleSectionId]);
 
   return (
     <motion.header
@@ -59,8 +67,8 @@ export default function Header() {
               className={clsx(
                 "relative tracking-wider hover:text-white px-6 py-2 transition-all mix-blend-screen",
                 {
-                  "text-slate-400": path !== link.hash,
-                  "text-white": path === link.hash,
+                  "text-slate-400": window.location.hash !== link.hash,
+                  "text-white": window.location.hash === link.hash,
                   "text-4xl": scrollPos <= 200,
                   "text-xl": scrollPos > 200,
                 }
@@ -83,14 +91,19 @@ export default function Header() {
               </button>
               <button
                 onClick={() => handleNav(link.hash)}
-                className={clsx("lg:hidden text-slate-400 text-xl", {
-                  hidden: scrollPos <= 200,
-                  block: scrollPos > 200,
-                })}
+                className={clsx(
+                  "lg:hidden text-slate-400 text-xl hover:text-white",
+                  {
+                    "text-slate-400": window.location.hash !== link.hash,
+                    "text-white": window.location.hash === link.hash,
+                    hidden: scrollPos <= 200,
+                    block: scrollPos > 200,
+                  }
+                )}
               >
                 <Icon icon={link.icon} height={60} width={60} />
               </button>
-              {path === link.hash && (
+              {visibleSectionId === link.hash.slice(1) && (
                 <motion.div
                   layoutId="active-pill"
                   className={clsx(
