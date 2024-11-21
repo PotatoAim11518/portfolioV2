@@ -23,7 +23,7 @@ export default function AboutMe() {
         initial="initial"
         animate="visible"
         layoutId="about-me"
-        className="relative gradient-text tracking-wide font-semibold text-center top-11 lg:top-[3.5rem] lg:left-7 lg:text-left uppercase drop-shadow-md z-10"
+        className="relative gradient-text tracking-wide font-semibold text-center top-16 lg:top-[3.5rem] lg:left-7 lg:text-left uppercase drop-shadow-md z-10"
       >
         About me
       </motion.h2>

@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     name: "This Portfolio",
     image: personalPortfolio,
     github: "https://github.com/PotatoAim11518/portfolioV2",
-    href: "https://wilsonhuang.dev",
+    href: "https://www.wilsonhuang.dev",
     description:
       "This is the most recent version of my personal portfolio site and wills serve to store some side projects and showcase my frontend skillset. It makes use of Framer Motion and TailwindCSS for some interesting animations and interactions that I'm quite proud of. I'm actively improving things under-the-hood based on React best-practices.",
     tags: ["React", "TailwindCSS", "Framer Motion", "EmailJS"],

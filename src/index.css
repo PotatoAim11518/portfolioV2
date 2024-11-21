@@ -60,7 +60,7 @@
 }
 
 .btn {
-  @apply bg-gradient-to-tl lg:from-gray-700 lg:to-gray-900 hover:from-slate-50 hover:to-slate-900 py-2 shadow-md border-2 border-indigo-300/50 gap-x-2 px-5 tracking-widest uppercase text-white hover:text-black rounded-full transition-all;
+  @apply bg-gradient-to-tl lg:from-gray-700 lg:to-gray-900 hover:from-slate-50 hover:to-slate-900 py-2 shadow-md border-2 border-indigo-300/50 gap-x-2 px-5 tracking-widest uppercase text-xl-sm lg:text-base text-white hover:text-black rounded-full transition-all;
 }
 
 .form-btn {
@@ -76,7 +76,7 @@
 }
 
 .textbox {
-  @apply leading-8 text-white/90 bg-gray-900 bg-gradient-to-br from-gray-900 via-transparent to-white/10 rounded-3xl p-14 shadow-md text-xl-sm lg:text-base;
+  @apply lg:leading-8 text-white/90 bg-gray-900 bg-gradient-to-br from-gray-900 via-transparent to-white/10 rounded-3xl p-14 shadow-md text-4xl-sm lg:text-base;
 }
 
 .background {

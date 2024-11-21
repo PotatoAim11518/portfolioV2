@@ -24,7 +24,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
         layoutId={`project-${name}`}
         target="blank"
         href={href}
-        className="relative flex flex-col justify-center items-center lg:h-[460px] border-2 lg:border-2 bg-clip-border hover:animate-glow hover:border-transparent glow overflow-hidden shadow-lg hover:transition"
+        className="relative flex flex-col justify-center items-center aspect-[3/2] lg:aspect-[0.707] border-2 lg:border-2 bg-clip-border hover:animate-glow hover:border-transparent glow overflow-hidden shadow-lg hover:transition"
         style={{ borderRadius: "12px" }}
       >
         <img
@@ -48,7 +48,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
         viewport={{ once: true }}
         className="relative flex flex-col items-center justify-start lg:items-start lg:gap-y-4"
       >
-        <p className="relative w-full leading-relaxed tracking-wide text-white bg-gray-900 bg-gradient-to-tl from-gray-900 to-white/10 rounded-xl px-6 py-4 shadow-md">
+        <p className="relative w-full leading-relaxed tracking-wide font-light text-3xl-sm lg:text-base text-white bg-gray-900 bg-gradient-to-tl from-gray-900 to-white/10 rounded-xl px-6 py-4 shadow-md">
           {description}
           {github && (
             <a href={github} target="blank">
