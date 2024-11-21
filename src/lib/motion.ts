@@ -27,3 +27,8 @@ export const viewVariants = {
     },
   },
 };
+
+export const factBoxVariants = {
+  initial: { y: 0 },
+  visible: { y: -60 },
+};

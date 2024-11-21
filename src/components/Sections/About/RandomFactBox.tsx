@@ -3,15 +3,12 @@ import clsx from "clsx";
 import { viewVariants } from "../../../lib/motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
-import { FACTS } from "../../../data/about";
-
-const factBoxVariants = {
-  initial: { y: 0 },
-  visible: { y: -60 },
-};
+import LargeScreenFacts from "./LargeScreenFacts";
+import SmallScreenFacts from "./SmallScreenFacts";
 
 export default function RandomFactBox() {
   const [showSwipe, setShowSwipe] = useState(true);
+
   return (
     <motion.div
       onTapStart={() => setShowSwipe(false)}
@@ -28,7 +25,7 @@ export default function RandomFactBox() {
         delay: 0.3,
       }}
       style={{ scale: "130%" }}
-      className="h-full w-auto my-20 lg:mx-20 pb-10"
+      className="h-full w-auto my-40 lg:my-20 lg:mx-20 -ml-20 pb-10"
     >
       <div
         className={clsx(
@@ -42,70 +39,38 @@ export default function RandomFactBox() {
       </div>
       <div
         aria-label="t-upper-panel"
-        className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] bottom-[260px]"
+        className="absolute bg-cyan-400 h-[40px] w-[400px] left-[79px] bottom-[478px] lg:h-[20px] lg:w-[200px] lg:left-[40px] lg:bottom-[260px]"
       />
-      <div className="[mask-image:_linear-gradient(to_top,transparent_0,0,_black_calc(100%-50px),transparent_100%)]">
-        <div className="h-[320px]">
-          <motion.div
-            className="absolute flex flex-col left-[33%] top-[240px]"
-            dragConstraints={{ top: -180 * FACTS.length, bottom: 0 }}
-            drag="y"
-          >
-            <ul className="absolute flex flex-col-reverse justify-center items-center gap-y-14">
-              {FACTS.map((fact, i) => (
-                <motion.li
-                  key={i}
-                  className={clsx(
-                    "font-mono text-sm text-black text-center place-content-center tracking-tight leading-4 p-2 -top-24 left-20 h-36 w-28 shadow-md bg-stone-300"
-                  )}
-                  style={{
-                    mask: "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/11px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/11px 51% repeat-x",
-                  }}
-                  variants={factBoxVariants}
-                  initial="initial"
-                  whileInView="visible"
-                  transition={{
-                    type: "spring",
-                    ease: "easeInOut",
-                    duration: 2,
-                    delay: 0.3,
-                  }}
-                >
-                  {fact}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </div>
+      <LargeScreenFacts />
+      <SmallScreenFacts />
       <div className="relative">
         <div
           aria-label="tl-triangle"
-          className="absolute w-0 h-0 border-[20px] border-l-transparent border-t-transparent border-r-cyan-400 border-b-cyan-400 left-0 -top-[40px]"
+          className="absolute w-0 h-0 border-[40px] lg:border-[20px] border-l-transparent border-t-transparent border-r-cyan-400 border-b-cyan-400 left-0 -top-[79px] lg:-top-[40px]"
         />
         <div
           aria-label="t-lower-panel"
-          className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] -top-[20px]"
+          className="absolute bg-cyan-400 h-[40px] w-[400px] left-[79px] -top-[40px] lg:h-[20px] lg:w-[200px] lg:left-[40px] lg:-top-[20px]"
         />
         <div
           aria-label="front-panel"
-          className="z-20 relative place-content-center bg-gradient-to-tl from-stone-900 to-stone-800 h-[200px] w-[200px] right-0 top-0"
+          className="z-20 relative place-content-center bg-gradient-to-tl from-stone-900 to-stone-800 h-[400px] w-[400px] lg:h-[200px] lg:w-[200px] right-0 top-0"
         >
-          <h6 className="text-center gradient-text p-6 glow animate-sheen">
+          <p className="text-5xl-sm lg:text-xl text-center gradient-text p-6 glow animate-sheen">
             Random Fact Dispenser
-          </h6>
+          </p>
         </div>
         <div
           aria-label="tr-triangle"
-          className="absolute w-0 h-0 border-[20px] border-l-transparent border-t-transparent border-r-fuchsia-600 border-b-fuchsia-600 left-[200px] -top-[40px]"
+          className="absolute w-0 h-0 border-[40px] lg:border-[20px] border-l-transparent border-t-transparent border-r-fuchsia-600 border-b-fuchsia-600 left-[401px] -top-[79px] lg:left-[200px] lg:-top-[40px]"
         />
         <div
           aria-label="br-triangle"
-          className="absolute w-0 h-0 border-[20px] border-r-transparent border-b-transparent border-l-fuchsia-600 border-t-fuchsia-600 left-[200px] bottom-0"
+          className="absolute w-0 h-0 border-[40px] lg:border-[20px] border-r-transparent border-b-transparent border-l-fuchsia-600 border-t-fuchsia-600 left-[401px] lg:left-[200px] bottom-0"
         />
         <div
           aria-label="r-panel"
-          className="absolute bg-fuchsia-600 h-[160px] w-[40px] left-[200px] top-0"
+          className="absolute bg-fuchsia-600 h-[320px] w-[80px] left-[401px] lg:h-[160px] lg:w-[40px] lg:left-[200px] top-0"
         />
       </div>
     </motion.div>
