@@ -14,7 +14,7 @@
     @apply text-5xl;
   }
   h2 {
-    @apply text-4xl tracking-wide mb-4 mt-10;
+    @apply sm:text-5xl-sm lg:text-4xl tracking-wide mb-4 mt-10;
   }
   h3 {
     @apply text-3xl-sm lg:text-3xl;
@@ -76,7 +76,7 @@
 }
 
 .textbox {
-  @apply lg:leading-8 text-white/90 bg-gray-900 bg-gradient-to-br from-gray-900 via-transparent to-white/10 rounded-3xl p-14 shadow-md text-4xl-sm lg:text-base;
+  @apply lg:leading-8 text-white/90 bg-gray-900 bg-gradient-to-br from-gray-900 via-transparent to-white/10 rounded-3xl p-14 shadow-md text-4xl-sm sm:text-2xl-sm lg:text-base;
 }
 
 .background {

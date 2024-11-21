@@ -26,8 +26,12 @@ export function SkillsNav({ labels, activeTab, onClick }: SkillsNavProps) {
                 "hover:text-white text-white/50 transition": activeTab !== i,
               })}
             >
-              <button className={clsx("w-full px-6 py-2 transition")}>
-                <h6>{label}</h6>
+              <button
+                className={clsx(
+                  "w-full text-3xl-sm sm:text-2xl-sm lg:text-lg px-6 py-2 transition"
+                )}
+              >
+                {label}
               </button>
               {activeTab === i ? (
                 <motion.div

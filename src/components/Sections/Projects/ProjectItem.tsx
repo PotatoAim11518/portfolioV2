@@ -24,7 +24,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
         layoutId={`project-${name}`}
         target="blank"
         href={href}
-        className="relative flex flex-col justify-center items-center aspect-[3/2] lg:aspect-[0.707] border-2 lg:border-2 bg-clip-border hover:animate-glow hover:border-transparent glow overflow-hidden shadow-lg hover:transition"
+        className="relative flex flex-col justify-center items-center w-full aspect-[3/2] lg:aspect-[0.707] border-2 lg:border-2 bg-clip-border hover:animate-glow hover:border-transparent glow overflow-hidden shadow-lg hover:transition"
         style={{ borderRadius: "12px" }}
       >
         <img

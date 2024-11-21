@@ -48,7 +48,7 @@ export default function CoreSkills() {
             </motion.div>
           ))}
         </motion.div>
-        <p className="font-light text-3xl-sm lg:text-base text-center mt-12">
+        <p className="font-light text-4xl-sm sm:text-2xl-sm lg:text-base text-center mt-12">
           {`I'm experienced in fullstack development, multiple state management systems, and plenty of third-party libraries. In my free time, I hope to pick up another language or two and build something out of my comfort zone.
           \nI'm always open to something new, of course--learning is a life-long skill!`}
         </p>
