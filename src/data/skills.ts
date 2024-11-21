@@ -39,22 +39,22 @@ export const OTHER_SKILLS: Skill[] = [
   },
   {
     name: "Heroku",
-    icon: "devicon:heroku",
+    icon: "skill-icons:heroku",
     link: "https://www.heroku.com/",
   },
   {
     name: "Vercel",
-    icon: "devicon:vercel",
+    icon: "simple-icons:vercel",
     link: "https://vercel.com/",
   },
   {
     name: "Framer Motion",
-    icon: "devicon:framermotion",
+    icon: "teenyicons:framer-outline",
     link: "https://www.framer.com/motion/",
   },
   {
     name: "Styled Components",
-    icon: "skill-icons:styledcomponents",
+    icon: "vscode-icons:file-type-styled",
     link: "https://styled-components.com/",
   },
   {
@@ -72,7 +72,7 @@ export const OTHER_SKILLS: Skill[] = [
     icon: "",
     link: "https://zustand.docs.pmnd.rs/getting-started/introduction",
   },
-  { name: "Socket.io", icon: "devicon:socketio", link: "https://socket.io/" },
+  { name: "Socket.io", icon: "logos:socket-io", link: "https://socket.io/" },
   {
     name: "Contentful",
     icon: "logos:contentful",
@@ -98,12 +98,12 @@ export const LEARNING: Skill[] = [
   },
   {
     name: "Unity",
-    icon: "devicon:unity",
+    icon: "cib:unity",
     link: "https://unity.com/",
   },
   {
     name: "Three.js",
-    icon: "devicon:threejs",
+    icon: "tabler:brand-threejs",
     link: "https://threejs.org/",
   },
 ];

@@ -1,3 +1,10 @@
+import {
+  DOMKeyframesDefinition,
+  ElementOrSelector,
+  stagger,
+  useAnimate,
+  useInView,
+} from "framer-motion";
 import { MutableRefObject, useEffect, useState } from "react";
 
 type WindowState = {
@@ -42,7 +49,7 @@ export function useVisibleSectionId(
         });
       },
       {
-        threshold: 0.3,
+        threshold: 0.2,
       }
     );
 
@@ -67,4 +74,26 @@ export function usePathChange() {
     window.addEventListener("hashchange", handlePathChange);
     return () => window.removeEventListener("hashchange", handlePathChange);
   }, [path]);
+}
+
+export function useStaggerAnimation(
+  elementTag: ElementOrSelector,
+  initialState: DOMKeyframesDefinition,
+  endState: DOMKeyframesDefinition,
+  duration = 0.05,
+  startDelay = 0,
+  once = true
+) {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: once });
+
+  const staggerList = stagger(duration, { startDelay: startDelay });
+
+  useEffect(() => {
+    animate(elementTag, isInView ? endState : initialState, {
+      delay: isInView ? staggerList : 1,
+    });
+  }, [animate, staggerList, isInView, elementTag, initialState, endState]);
+
+  return scope;
 }

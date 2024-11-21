@@ -1,3 +1,4 @@
+import { LINKEDIN } from "../../../data/constants";
 import { viewVariants } from "../../../lib/motion";
 import Heading from "../../Heading";
 import ContactForm from "./ContactForm";
@@ -14,10 +15,20 @@ export default function Contact() {
         viewport={{ once: true }}
         className="my-6"
       >
-        <p className="w-full text-justify lg:text-center px-8 text-3xl lg:text-2xl leading-relaxed tracking-wide text-white font-thin">
+        <h6 className="w-full tracking-wider leading-relaxed font-extralight">
           If you feel like I'd be a good fit for your team, let's chat! Feel
-          free to reach out to me via LinkedIn or send me an email.
-        </p>
+          free to reach out to me via{" "}
+          <span>
+            <a
+              className="text-sky-500 italic font-medium"
+              aria-label="linkedin"
+              href={LINKEDIN}
+            >
+              LinkedIn
+            </a>
+          </span>{" "}
+          or send me an email below.
+        </h6>
         <ContactForm />
       </motion.section>
     </div>

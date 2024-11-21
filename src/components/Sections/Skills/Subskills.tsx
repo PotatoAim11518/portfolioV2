@@ -4,36 +4,48 @@ import { Skill } from "../../../lib/types";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { viewVariants } from "../../../lib/motion";
+import { useStaggerAnimation } from "../../../lib/hooks";
 
 type SubskillsProps = {
-  children: ReactNode;
+  children?: ReactNode;
   skillList: Skill[];
 };
 
 export default function Subskills({ children, skillList }: SubskillsProps) {
+  const scope = useStaggerAnimation(
+    "li",
+    {},
+    { opacity: 1, y: 0 },
+    0.05,
+    0.5,
+    true
+  );
   return (
     <motion.section
       variants={viewVariants}
       initial="initial"
       whileInView="visible"
       viewport={{ once: true }}
-      className="flex flex-col items-center w-full"
+      className="flex flex-col items-center w-full py-14"
     >
-      <h2 className="font-thin leading-snug">{children}</h2>
-      <ul className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-y-4">
-        {skillList.map((skill) => (
-          <li key={skill.name}>
+      <h4 className="font-thin">{children}</h4>
+      <motion.ul
+        ref={scope}
+        className="flex flex-wrap justify-center gap-y-2 gap-x-6 lg:gap-y-3 lg:gap-x-7"
+      >
+        {skillList.map((skill, i) => (
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            layoutId={skill.name + i}
+            key={skill.name}
+            className="w-full md:w-[48%] lg:w-[31%]"
+          >
             <motion.a
               key={skill.name}
               target="blank"
               href={skill.link}
-              initial={{ scale: 1 }}
-              whileHover={{
-                scale: 1.03,
-                transition: { type: "spring" },
-              }}
               className={clsx(
-                "flex justify-center items-center w-full text-center tooltip",
+                "flex justify-center items-center w-full text-center btn truncate text-clip",
                 {
                   "pointer-events-none": !skill.link,
                 }
@@ -46,9 +58,9 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
                 </span>
               )}
             </motion.a>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </motion.section>
   );
 }

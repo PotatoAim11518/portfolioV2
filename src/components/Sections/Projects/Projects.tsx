@@ -1,17 +1,21 @@
-import { PROJECTS } from "../../../data/projects";
+import { Project } from "../../../lib/types";
 import Heading from "../../Heading";
-import Project from "./Project";
+import ProjectItem from "./ProjectItem";
 import SeeMoreLink from "./SeeMoreLink";
 
-export default function Projects() {
+type ProjectsProps = {
+  projects: Project[];
+};
+export default function Projects({ projects }: ProjectsProps) {
   return (
     <div className="flex flex-col justify-center items-center">
       <Heading>Projects</Heading>
-      <section className="flex flex-col my-10">
-        {PROJECTS.map((project) => (
-          <Project key={project.name} project={project} />
+
+      <div className="flex flex-col md:flex-row flex-wrap gap-12">
+        {projects.map((project) => (
+          <ProjectItem key={project.name} project={project} />
         ))}
-      </section>
+      </div>
       <SeeMoreLink />
     </div>
   );

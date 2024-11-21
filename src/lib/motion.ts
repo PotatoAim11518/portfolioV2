@@ -18,6 +18,7 @@ export const viewVariants = {
   visible: {
     y: 0,
     x: 0,
+    scale: 1,
     opacity: 1,
     transition: {
       duration: 0.6,

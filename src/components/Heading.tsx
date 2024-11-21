@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { viewVariants } from "../lib/motion";
+
 type HeadingProps = {
   children: React.ReactNode;
 };
@@ -5,10 +8,22 @@ type HeadingProps = {
 export default function Heading({ children }: HeadingProps) {
   return (
     <>
-      <h1 className="w-full text-center lg:text-left items-center mb-4 ">
+      <motion.h2
+        variants={viewVariants}
+        initial="initialT"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="w-full text-center lg:text-left items-center font-semibold"
+      >
         {children}
-      </h1>
-      <div className="h-1 mb-8 w-full lg:w-[150%] bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
+      </motion.h2>
+      <motion.div
+        variants={viewVariants}
+        initial="initial"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="h-1 mb-8 w-full md:w-[100%] lg:w-[120%] bg-gradient-to-r from-transparent via-white lg:via-15% to-transparent"
+      />
     </>
   );
 }

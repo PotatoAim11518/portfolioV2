@@ -73,7 +73,7 @@ export default function ContactForm() {
       className="grid grid-rows-auto gap-x-8 mt-10 mb-20"
     >
       <fieldset className="flex flex-col lg:flex-row gap-8">
-        <div className="flex flex-col gap-y-8">
+        <div className="flex flex-col gap-y-4">
           <InputField
             fieldName="name"
             type="text"
@@ -92,7 +92,7 @@ export default function ContactForm() {
         <div className="relative flex flex-col h-full w-full gap-2">
           <label
             htmlFor="message"
-            className="text-white text-4xl lg:text-2xl font-light tracking-wide leading-relaxed"
+            className="lg:text-xl font-light tracking-wide leading-relaxed"
           >
             Message
           </label>
@@ -106,8 +106,9 @@ export default function ContactForm() {
             name="message"
             id="message"
             required
+            placeholder="Type your message here..."
             className={clsx(
-              "px-4 py-4 min-h-72 max-h-72 w-full text-white text-3xl lg:text-xl focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition",
+              "px-4 py-4 min-h-[278px] w-full text-xl lg:text-base font-light focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition",
               {
                 "ring-red-900": characterCount >= MAX_CHARACTER_COUNT,
                 "ring-sky-500": characterCount < MAX_CHARACTER_COUNT,
@@ -148,10 +149,10 @@ export default function ContactForm() {
         type="submit"
         disabled={status === "sending"}
         className={clsx(
-          "flex justify-center items-center gap-x-2 text-3xl lg:text-lg w-[50%] h-16 lg:w-36 lg:h-10 row-start-2 self-start justify-self-center lg:justify-self-end btn",
+          "flex justify-center items-center gap-x-2 w-[50%] h-16 lg:w-36 lg:h-10 row-start-2 self-start justify-self-center lg:justify-self-end",
           {
             "btn-loading animate-glow": status === "sending",
-            "btn-hover": status !== "sending",
+            "form-btn btn-hover": status !== "sending",
           }
         )}
       >
@@ -177,7 +178,7 @@ function InputField({ fieldName, ...rest }: InputFieldProps) {
     <div className="flex flex-col gap-2">
       <label
         htmlFor={fieldName}
-        className="text-white text-4xl lg:text-2xl font-light tracking-wide leading-relaxed"
+        className="lg:text-xl font-light tracking-wide leading-relaxed"
       >
         {fieldName[0].toUpperCase() + fieldName.slice(1)}
       </label>
@@ -188,7 +189,7 @@ function InputField({ fieldName, ...rest }: InputFieldProps) {
           .map((c) => c.toLocaleLowerCase("en-US"))
           .join("_")}
         id={fieldName}
-        className="py-1 px-4 placeholder:text-indigo-200 placeholder:italic text-white text-3xl lg:text-xl w-full lg:w-[400px] h-16 lg:h-12 ring-sky-500 focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition"
+        className="py-1 px-4 placeholder:text-indigo-200 placeholder:italic text-xl lg:text-base font-light w-full lg:w-[400px] h-16 lg:h-12 ring-sky-500 focus:ring-2 focus:bg-white/10 bg-indigo-300/10 rounded-md outline-none caret-indigo-300 caret transition"
       />
     </div>
   );

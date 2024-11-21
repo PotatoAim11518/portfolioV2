@@ -2,6 +2,29 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+      lexend: ["Lexend", "sans-serif"],
+      mono: ["Space mono", "mono"],
+    },
+    fontSize: {
+      "5xl": "89.8px",
+      "4xl": "67.3px",
+      "3xl": "50.5px",
+      "2xl": "37.9px",
+      xl: "28.4px",
+      lg: "21.3px",
+      base: "16px",
+      sm: "12px",
+      "5xl-sm": "47.8px",
+      "4xl-sm": "39.8px",
+      "3xl-sm": "33.2px",
+      "2xl-sm": "27.7px",
+      "xl-sm": "23px",
+      "lg-sm": "19.2px",
+      "base-sm": "16px",
+      "sm-sm": "13.3px",
+    },
     extend: {
       animation: {
         city: "city 2s forwards",
@@ -66,5 +89,4 @@ export default {
       },
     },
   },
-  plugins: [],
 };

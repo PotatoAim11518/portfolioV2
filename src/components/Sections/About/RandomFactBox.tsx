@@ -1,4 +1,3 @@
-// import { motion, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { viewVariants } from "../../../lib/motion";
@@ -29,7 +28,7 @@ export default function RandomFactBox() {
         delay: 0.3,
       }}
       style={{ scale: "130%" }}
-      className="relative h-full w-auto my-20 lg:mx-20"
+      className="h-full w-auto my-20 lg:mx-20 pb-10"
     >
       <div
         className={clsx(
@@ -43,7 +42,7 @@ export default function RandomFactBox() {
       </div>
       <div
         aria-label="t-upper-panel"
-        className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] bottom-[220px]"
+        className="absolute bg-cyan-400 h-[20px] w-[200px] left-[40px] bottom-[260px]"
       />
       <div className="[mask-image:_linear-gradient(to_top,transparent_0,0,_black_calc(100%-50px),transparent_100%)]">
         <div className="h-[320px]">
@@ -57,7 +56,7 @@ export default function RandomFactBox() {
                 <motion.li
                   key={i}
                   className={clsx(
-                    "text-center text-xs place-content-center tracking-tight font-mono p-2 -top-24 left-20 h-36 w-28 shadow-md bg-stone-300"
+                    "font-mono text-sm text-black text-center place-content-center tracking-tight leading-4 p-2 -top-24 left-20 h-36 w-28 shadow-md bg-stone-300"
                   )}
                   style={{
                     mask: "conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/11px 60% repeat-x, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/11px 51% repeat-x",
@@ -92,9 +91,9 @@ export default function RandomFactBox() {
           aria-label="front-panel"
           className="z-20 relative place-content-center bg-gradient-to-tl from-stone-900 to-stone-800 h-[200px] w-[200px] right-0 top-0"
         >
-          <h3 className="text-center p-6 glow animate-sheen">
+          <h6 className="text-center gradient-text p-6 glow animate-sheen">
             Random Fact Dispenser
-          </h3>
+          </h6>
         </div>
         <div
           aria-label="tr-triangle"

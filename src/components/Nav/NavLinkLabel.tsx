@@ -18,7 +18,7 @@ export default function NavLinkLabel({
     <button
       onClick={() => handleNav(link.hash)}
       className={clsx("lg:visible lg:flex", {
-        "hidden text-xl": scrollPos > SCROLL_THRESHOLD,
+        hidden: scrollPos > SCROLL_THRESHOLD,
       })}
     >
       {link.name === "About" ? (

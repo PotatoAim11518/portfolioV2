@@ -1,16 +1,29 @@
-import Header from "./Header";
+import Header from "./Nav/Header";
 import About from "./Sections/About/About";
 import Skills from "./Sections/Skills/Skills";
-import Projects from "./Sections/Projects/Projects";
 import Contact from "./Sections/Contact/Contact";
 import Footer from "./Footer";
 import { useRef } from "react";
 import { useVisibleSectionId } from "../lib/hooks";
+import { PROJECTS } from "../data/projects";
+import Projects from "./Sections/Projects/Projects";
+import Subskills from "./Sections/Skills/Subskills";
+import { LEARNING, OTHER_SKILLS } from "../data/skills";
+import CoreSkills from "./Sections/Skills/CoreSkills";
 
 const pageSections = [
   { id: "about", pageSection: <About /> },
-  { id: "skills", pageSection: <Skills /> },
-  { id: "projects", pageSection: <Projects /> },
+  {
+    id: "skills",
+    pageSection: (
+      <Skills labels={["Core", "Other technical", "Learning next"]}>
+        <CoreSkills />
+        <Subskills skillList={OTHER_SKILLS}></Subskills>
+        <Subskills skillList={LEARNING}></Subskills>
+      </Skills>
+    ),
+  },
+  { id: "projects", pageSection: <Projects projects={PROJECTS} /> },
   { id: "contact", pageSection: <Contact /> },
 ];
 
@@ -19,7 +32,7 @@ function App() {
   const visibleSectionId = useVisibleSectionId(sectionRefs);
 
   return (
-    <main className="flex flex-col items-center overflow-hidden background">
+    <main className="font-lexend text-white font-medium flex flex-col items-center overflow-hidden background">
       <Header visibleSectionId={visibleSectionId} />
       {pageSections.map(({ id, pageSection }, i) => (
         <section

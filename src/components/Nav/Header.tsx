@@ -1,14 +1,18 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { EXTERNAL_LINKS, NAV_LINKS, SCROLL_THRESHOLD } from "../data/constants";
+import {
+  EXTERNAL_LINKS,
+  NAV_LINKS,
+  SCROLL_THRESHOLD,
+} from "../../data/constants";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { viewVariants } from "../lib/motion";
-import { usePathChange } from "../lib/hooks";
-import NavLinkItem from "./Nav/NavLinkItem";
-import NavLinkLabel from "./Nav/NavLinkLabel";
-import NavLinkIcon from "./Nav/NavLinkIcon";
-import NavPill from "./Nav/NavPill";
+import { viewVariants } from "../../lib/motion";
+import { usePathChange } from "../../lib/hooks";
+import NavLinkItem from "./NavLinkItem";
+import NavLinkLabel from "./NavLinkLabel";
+import NavLinkIcon from "./NavLinkIcon";
+import NavPill from "./NavPill";
 
 type HeaderProps = {
   visibleSectionId: string | null;
@@ -34,7 +38,6 @@ export default function Header({ visibleSectionId }: HeaderProps) {
       variants={viewVariants}
       initial="initialT"
       whileInView="visible"
-      viewport={{ once: true }}
       className={clsx("lg:w-full fixed flex lg:right-0 top-6 z-30", {
         "justify-center items-center": scrollPos <= SCROLL_THRESHOLD,
         "justify-end items-center right-6": scrollPos > SCROLL_THRESHOLD,
@@ -42,12 +45,9 @@ export default function Header({ visibleSectionId }: HeaderProps) {
     >
       <motion.nav
         layoutId="nav"
-        variants={viewVariants}
-        initial="initialT"
-        whileInView="visible"
         viewport={{ once: true }}
-        className={clsx("py-4 lg:px-4 lg:py-2 rounded-full lg:rounded-e-none", {
-          "bg-gray-900/75 shadow-md backdrop-blur-sm ":
+        className={clsx("py-4 lg:py-1 lg:px-4 rounded-l-full", {
+          "bg-gray-900/75 shadow-md backdrop-blur-sm rounded-r-full lg:rounded-r-none":
             scrollPos > SCROLL_THRESHOLD,
         })}
       >
@@ -61,7 +61,6 @@ export default function Header({ visibleSectionId }: HeaderProps) {
             <NavLinkItem
               key={link.name}
               link={link}
-              scrollPos={scrollPos}
               handleNav={handleNav}
               visibleSectionId={visibleSectionId}
             >
@@ -86,7 +85,7 @@ export default function Header({ visibleSectionId }: HeaderProps) {
               className="text-slate-400 hover:text-white p-2 transition mix-blend-difference"
             >
               <a className="" href={link.href} target="blank">
-                <Icon icon={link.icon} height={40} width={40} />
+                <Icon icon={link.icon} height={32} width={32} />
               </a>
             </li>
           ))}

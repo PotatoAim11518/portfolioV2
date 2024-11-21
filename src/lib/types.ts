@@ -19,7 +19,7 @@ export type Skill = {
 export type Project = {
   name: string;
   image: string;
-  github: string;
+  github?: string;
   href: string;
   description: string;
   tags: string[];

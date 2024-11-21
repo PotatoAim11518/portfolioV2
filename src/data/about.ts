@@ -1,5 +1,5 @@
 export const INTRODUCTION =
-  "I build pixel-perfect front end experiences and love finding things to reverse-engineer to tease my brain. When I'm not coding you can find me by the ocean with fishing rod in hand, or exploring Hyrule mainly for its puzzles. The princess can wait.";
+  "Trained in fullstack with a focus on frontend, I love finding things to reverse-engineer to tease my brain. When I'm not coding you can find me by the ocean with fishing rod in hand, or exploring Hyrule mainly for its puzzles. The princess can wait.";
 
 export const FACTS = [
   "I build my own PCs, and sometimes for others too.",

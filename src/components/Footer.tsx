@@ -31,9 +31,9 @@ export default function Footer() {
           classes="col-start-6 col-span-2"
         />
       </div>
-      <small className="col-start-4 lg:col-start-6 col-span-full lg:col-span-4 text-justify pt-2 text-xl lg:text-sm">
-        Coded and designed from scratch in Visual Studio Code by me. Built with
-        React/Vite. Styled with Tailwind CSS.
+      <small className="col-start-4 lg:col-start-7 col-span-full lg:col-span-3 text-justify pt-2 text-xl lg:text-sm">
+        Coded and designed from scratch in Visual Studio Code with love. Built
+        with React/Vite. Styled with Tailwind CSS.
       </small>
     </footer>
   );
