@@ -55,7 +55,7 @@ export default function About() {
               delay: 0.6,
             }}
             viewport={{ once: true }}
-            className="text-center mt-8 tracking-wider font-extralight leading-relaxed text-3xl-sm sm:text-2xl-sm lg:text-lg lg:leading-normal lg:text-left"
+            className="text-center mt-8 tracking-wider font-extralight leading-relaxed text-4xl-sm sm:text-3xl-sm lg:text-lg lg:leading-normal lg:text-left"
           >
             {INTRODUCTION}
           </motion.h5>

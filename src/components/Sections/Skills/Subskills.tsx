@@ -31,7 +31,7 @@ export default function Subskills({ children, skillList }: SubskillsProps) {
       <h4 className="font-thin">{children}</h4>
       <motion.ul
         ref={scope}
-        className="flex flex-wrap justify-center gap-y-2 gap-x-6 lg:gap-y-3 lg:gap-x-7"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-7 lg:gap-x-7 lg:gap-y-4"
       >
         {skillList.map((skill, i) => (
           <motion.li
